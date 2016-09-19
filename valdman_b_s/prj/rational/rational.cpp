@@ -125,7 +125,7 @@ bool operator>(const Rational& left, const Rational& right)
 	Rational tmp{ left };
 
 	tmp -= right;
-	return tmp.IsPositive;
+	return tmp.IsPositive();
 }
 
 bool operator<(const Rational& left, const Rational& right)
@@ -133,7 +133,7 @@ bool operator<(const Rational& left, const Rational& right)
 	Rational tmp{ left };
 
 	tmp -= right;
-	return !tmp.IsPositive;
+	return !tmp.IsPositive();
 }
 
 bool operator>=(const Rational& left, const Rational& right)
