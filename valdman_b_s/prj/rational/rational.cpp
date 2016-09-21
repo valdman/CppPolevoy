@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdint>
 
+using namespace std;
+
 class Rational
 {
 public:
@@ -59,6 +61,9 @@ public: //overriding operators
 	{
 		return _divided == 0;
 	}
+
+	std::ostream& writeTo(std::ostream& ostrm) const;
+	std::istream& readFrom(std::istream& istrm);
 
 private:
 	int32_t _divided{ 0 };
@@ -146,6 +151,43 @@ bool operator<=(const Rational& left, const Rational& right)
 	return !(left > right);
 }
 
+std::ostream& Rational::writeTo(std::ostream& ostrm) const
+{
+	ostrm << _divided << "/" << _dividor;
+	return ostrm;
+}
+
+std::istream& Rational::readFrom(std::istream& istrm)
+{
+	int32_t divided(0);
+	char slash(0);
+	int32_t dividor(0);
+	istrm >> divided >> slash >> dividor;
+	if (istrm.good()) {
+		if ((Rational::_divided == divided) && (Rational::_dividor == dividor)) {
+			_divided == divided;
+			_dividor == dividor;
+
+		}
+		else {
+			istrm.setstate(std::ios_base::failbit);
+
+		}
+
+	}
+	return istrm;
+}
+
+inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs)
+{
+	return rhs.writeTo(ostrm);
+}
+
+inline std::istream& operator >> (std::istream& istrm, Rational& rhs)
+{
+	return rhs.readFrom(istrm);
+}
+
 
 int main() 
 {
@@ -166,5 +208,9 @@ int main()
 
 	firstNumber += secondNumber;
 
+	bool boolFlag = firstNumber >= secondNumber;
+
+	cout << sum << endl << partial << endl << multiply << endl << divide << endl << sumInt << endl <<
+		partialInt << endl << multiplyInt << endl << divideInt << endl << firstNumber << boolFlag << endl;
 	system("pause");
 }
