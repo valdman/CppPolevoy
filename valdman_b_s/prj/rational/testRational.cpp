@@ -31,6 +31,4 @@ int main()
     cout << firstNumber << " += " << secondNumber << "; result = " << firstNumber << endl;
 
     cout << firstNumber << " >= " << secondNumber << " = " << (firstNumber >= secondNumber) << endl;
-
-    system("pause");
 }

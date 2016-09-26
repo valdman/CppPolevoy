@@ -24,5 +24,4 @@ int main()
     cout << gcd(77, 77);
     cout << gcd(-11, 77);
     cout << gcd(-12, -4);
-    system("pause");
 }
