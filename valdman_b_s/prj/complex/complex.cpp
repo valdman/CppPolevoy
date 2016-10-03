@@ -43,6 +43,15 @@ Complex& Complex::operator*=(const double rhs)
     return *this;
 };
 
+Complex& Complex::operator/=(const double rhs) 
+{
+    if(rhs < 1E-6)
+        //todo: throw divide_by_zero
+    re /= rhs;
+    im /= rhs;
+    return *this;
+}
+
 Complex operator+(const Complex& lhs, const Complex& rhs)
 {
     Complex answer(lhs);
@@ -79,6 +88,13 @@ Complex operator*(const Complex& lhs, const double rhs)
 {
     Complex ans{ lhs };
     ans *= Complex{ rhs, 0 };
+    return ans;
+};
+
+Complex operator/(const Complex& lhs, const double rhs)
+{
+    Complex ans{ lhs };
+    ans /= rhs;
     return ans;
 };
 
