@@ -79,6 +79,18 @@ double&  Vec2d::operator[](const int idx)
     }
 }
 
+std::ostream & Vec2d::writeTo(std::ostream& ostrm) const
+{
+    ostrm << "{x: " << x << " ; y: " << y << " ;}";
+    return ostrm;
+}
+
+std::ostream& operator<<(std::ostream& ostrm, Vec2d obj)
+{
+    obj.writeTo(ostrm);
+    return ostrm;
+}
+
 double Vec2d::operator[](const int idx) const
 {
     switch (idx)
