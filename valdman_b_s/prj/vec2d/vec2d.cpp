@@ -34,28 +34,28 @@ Vec2d& Vec2d::operator/=(const double rhs)
 
 Vec2d Vec2d::operator+(const Vec2d& value) 
 {
-    Vec2d ans{ *this };
+    Vec2d ans( *this );
     ans += value;
     return ans;
 }
 
 Vec2d Vec2d::operator-(const Vec2d& value)
 {
-    Vec2d ans{ *this };
+    Vec2d ans( *this );
     ans -= value;
     return ans;
 }
 
 Vec2d Vec2d::operator*(const double value)
 {
-    Vec2d ans{ *this };
+    Vec2d ans( *this );
     ans *= value;
     return ans;
 }
 
 Vec2d Vec2d::operator/(const double value)
 {
-    Vec2d ans{ *this };
+    Vec2d ans( *this );
     ans /= value;
     return ans;
 }
@@ -66,15 +66,12 @@ double&  Vec2d::operator[](const int idx)
     {
     case(0):
         return x;
-        break;
 
     case(1):
         return y;
-        break;
 
     default:
         throw std::out_of_range("Out of range in Vec2d");
-        break;
     }
 }
 
@@ -96,14 +93,11 @@ double Vec2d::operator[](const int idx) const
     {
     case(0):
         return x;
-        break;
 
     case(1):
         return y;
-        break;
 
     default:
         throw std::out_of_range("Out of range in Vec2d");
-        break;
     }
 }
