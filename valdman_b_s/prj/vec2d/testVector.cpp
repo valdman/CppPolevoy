@@ -21,7 +21,5 @@ int main()
     cout << "a*(-3) = " << first * (-3) << endl << endl;
 
     cout << "length of " << third << "= " << Vec2d::abs(third) << endl;
-
-    system("pause");
     return 0;
 }

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 class Vec2d
 {

@@ -1,5 +1,4 @@
 #include "vec2d.h"
-#include <stdexcept>
 
 Vec2d& Vec2d::operator+=(const Vec2d& rhs)
 {
