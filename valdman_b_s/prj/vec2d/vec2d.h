@@ -13,6 +13,16 @@ public:
 
     ~Vec2d() = default;
 
+    bool operator==(const Vec2d& rhs)
+    {
+        return (fabs(x - rhs.x) < 1E-6) && (fabs(y - rhs.y) < 1E-6);
+    }
+
+    bool operator!=(const Vec2d& rhs)
+    {
+        return !(*this == rhs);
+    }
+
     Vec2d& operator=(const Vec2d& rhs) = default;
     Vec2d& operator+=(const Vec2d& rhs);
     Vec2d& operator-=(const Vec2d& rhs);
@@ -37,6 +47,12 @@ public:
     {
         return std::sqrt(scalar_multiply(vectr, vectr));
     }
+
+    bool operator>(const Vec2d& rhs);
+    bool operator>=(const Vec2d& rhs);
+    bool operator<(const Vec2d& rhs);
+    bool operator<=(const Vec2d& rhs);
+
 
     double static scalar_multiply(const Vec2d& first, const Vec2d& second)
     {

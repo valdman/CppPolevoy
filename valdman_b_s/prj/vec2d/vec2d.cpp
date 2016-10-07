@@ -23,7 +23,7 @@ Vec2d& Vec2d::operator*=(const double rhs)
 
 Vec2d& Vec2d::operator/=(const double rhs)
 {
-    if (rhs < 1E-6) {
+    if (fabs(rhs) < 1E-6) {
         throw std::invalid_argument("Divide by zero in Vec2d");
     }
 
@@ -101,3 +101,26 @@ double Vec2d::operator[](const int idx) const
         throw std::out_of_range("Out of range in Vec2d");
     }
 }
+
+bool Vec2d::operator>(const Vec2d &rhs)
+{
+    return (abs(*this) - abs(rhs)) > 0;
+}
+
+bool Vec2d::operator>=(const Vec2d &rhs)
+{
+    return (abs(*this) - abs(rhs)) >= 0;
+}
+
+bool Vec2d::operator<(const Vec2d &rhs)
+{
+    return !(this - &rhs);
+}
+
+bool Vec2d::operator<=(const Vec2d &rhs)
+{
+    return !(this - &rhs);
+}
+
+
+

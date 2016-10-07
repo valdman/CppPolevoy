@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+void runArifmeticTests()
 {
     Vec2d first{ 2, 3 }, second{ -5 , -7 }, third{ 3, 4 };
 
@@ -18,8 +18,13 @@ int main()
     cout << "a*b (pseudoscalar) = " << Vec2d::pseudoscalar_multiply(first, second) << endl << endl;
 
     cout << "a*4 = " << first * 4 << endl;
-    cout << "a*(-3) = " << first * (-3) << endl << endl;
+    cout << "a/(-3) = " << first / (-3) << endl << endl;
 
     cout << "length of " << third << "= " << Vec2d::abs(third) << endl;
+}
+
+int main()
+{
+    runArifmeticTests();
     return 0;
 }
