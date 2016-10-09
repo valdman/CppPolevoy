@@ -1,16 +1,15 @@
+#include <cmath>
+#include <stdexcept>
 #include "rational.h"
-
-#include <iostream>
-#include <cstdint>
 
 using namespace std;
 
 
 Rational::Rational() {};
 
-Rational::Rational(const int number) : _divided{ number } {}
+Rational::Rational(const int number) : _numerator{ number } {}
 
-Rational::Rational(const int divided, const int dividor) : _divided{ divided }, _dividor{ dividor }
+Rational::Rational(const int divided, const int dividor) : _numerator{ divided }, _denumerator{ dividor }
 {
     if (!dividor) {
         throw invalid_argument("Zero denumerator in Rational");
@@ -22,44 +21,39 @@ Rational::Rational(const int divided, const int dividor) : _divided{ divided }, 
 
 Rational& Rational::operator+=(const Rational& value)
 {
-    _divided = _divided * value._dividor + _dividor * value._divided;
-    _dividor *= value._dividor;
+    _numerator = _numerator * value._denumerator + _denumerator * value._numerator;
+    _denumerator *= value._denumerator;
     _normalize();
     return *this;
 }
 
 Rational& Rational::operator-=(const Rational& value)
 {
-    _divided = _divided * value._dividor - _dividor * value._divided;
-    _dividor *= value._dividor;
+    _numerator = _numerator * value._denumerator - _denumerator * value._numerator;
+    _denumerator *= value._denumerator;
     _normalize();
     return *this;
 }
 
 Rational& Rational::operator/=(const Rational& value)
 {
-    _divided *= value._dividor;
-    _dividor *= value._divided;
+    _numerator *= value._denumerator;
+    _denumerator *= value._numerator;
     _normalize();
     return *this;
 }
 
 Rational& Rational::operator*=(const Rational& value)
 {
-    _divided *= value._divided;
-    _dividor *= value._dividor;
+    _numerator *= value._numerator;
+    _denumerator *= value._denumerator;
     _normalize();
     return *this;
 }
 
 bool Rational::IsPositive()
 {
-    return _divided > 0 == _dividor > 0;
-}
-
-bool Rational::IsZero()
-{
-    return _divided == 0;
+    return (_numerator > 0) == (_denumerator > 0);
 };
 
 int32_t Rational::gcd(const int32_t a, const int32_t b)
@@ -80,9 +74,9 @@ int32_t Rational::gcd(const int32_t a, const int32_t b)
 
 void Rational::_normalize()
 {
-    int32_t nod = gcd(_divided, _dividor);
-    _divided /= nod;
-    _dividor /= nod;
+    int32_t nod = gcd(_numerator, _denumerator);
+    _numerator /= nod;
+    _denumerator /= nod;
 }
 
 
@@ -146,7 +140,7 @@ bool operator<=(const Rational& left, const Rational& right)
 
 std::ostream& Rational::writeTo(std::ostream& ostrm) const
 {
-    ostrm << _divided << "/" << _dividor;
+    ostrm << _numerator << "/" << _denumerator;
     return ostrm;
 }
 
@@ -157,9 +151,9 @@ std::istream& Rational::readFrom(std::istream& istrm)
     int32_t dividor(0);
     istrm >> divided >> slash >> dividor;
     if (istrm.good()) {
-        if ((Rational::_divided == divided) && (Rational::_dividor == dividor)) {
-            _divided == divided;
-            _dividor == dividor;
+        if ((Rational::_numerator == divided) && (Rational::_denumerator == dividor)) {
+            _numerator = divided;
+            _denumerator = dividor;
 
         }
         else {
@@ -171,6 +165,10 @@ std::istream& Rational::readFrom(std::istream& istrm)
     return istrm;
 }
 
+double Rational::toDouble() {
+    return _numerator / (double_t )_denumerator;
+}
+
 std::ostream& operator<<(std::ostream& ostr, Rational obj)
 {
     return obj.writeTo(ostr);
@@ -179,4 +177,13 @@ std::ostream& operator<<(std::ostream& ostr, Rational obj)
 std::istream& operator >> (std::istream& istrm, Rational& obj)
 {
     return obj.readFrom(istrm);
+}
+
+bool operator==(const Rational &left, const Rational &right) {
+    Rational difference = right - left;
+    return fabs(difference.toDouble()) < 1E-6;
+}
+
+bool operator!=(const Rational &left, const Rational &right) {
+    return !operator==(left, right);
 }
