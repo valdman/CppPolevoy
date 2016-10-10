@@ -30,7 +30,7 @@ int main()
 
     Rational thirdNumber{700000001, 800000000};
 
-    cout << secondNumber << " == " << thirdNumber << "; result = " << (secondNumber == thirdNumber) << endl;
+     cout << secondNumber << " == " << thirdNumber << "; result = " << (secondNumber == thirdNumber) << endl;
 
     cout << firstNumber << " >= " << secondNumber << " = " << (firstNumber >= secondNumber) << endl << endl;
 

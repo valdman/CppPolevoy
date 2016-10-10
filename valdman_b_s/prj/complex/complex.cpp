@@ -46,7 +46,7 @@ Complex& Complex::operator*=(const double rhs)
 Complex& Complex::operator/=(const double rhs) 
 {
     if(rhs < 1E-6)
-        //todo: throw divide_by_zero
+        throw std::invalid_argument("Divide by zero in Complex");
     re /= rhs;
     im /= rhs;
     return *this;
@@ -146,4 +146,14 @@ std::istream& Complex::readFrom(std::istream& istrm)
 
     }
     return istrm;
+}
+
+bool Complex::operator==(const Complex &rhs) const
+{
+    return (fabs(re - rhs.re) < 1E-6) && (fabs(im - rhs.im) < 1E-6);
+}
+
+bool Complex::operator!=(const Complex &rhs) const
+{
+    return !operator==(rhs);
 }

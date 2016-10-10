@@ -1,14 +1,16 @@
 #ifndef HG_COMPLEX_H_20160926
 #define HG_COMPLEX_H_20160926
 
+#include <cmath>
+
 struct Complex
 {
     Complex() = default;
     explicit Complex(const double real);
     Complex(const double real, const double imaginary);
 
-    bool operator==(const Complex& rhs) const { return (abs(re - rhs.re) < 1E-6) && (abs(im - rhs.im) < 1E-6); }
-    bool operator!=(const Complex& rhs) const { return !operator==(rhs); }
+    bool operator==(const Complex& rhs) const;
+    bool operator!=(const Complex& rhs) const;
 
     Complex& operator+=(const Complex& rhs);
     Complex& operator+=(const double rhs);

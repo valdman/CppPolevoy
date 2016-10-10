@@ -60,7 +60,7 @@ Vec2d Vec2d::operator/(const double value)
     return ans;
 }
 
-double&  Vec2d::operator[](const int idx) 
+double&  Vec2d::operator[](const int idx)
 {
     switch (idx)
     {
