@@ -2,8 +2,8 @@
 // Created by Борис Вальдман on 17.10.16.
 //
 
-#ifndef HG_VECTOR_17102016_H
-#define HG_VECTOR_17102016_H
+#ifndef HG_VECTOR_H_20161017
+#define HG_VECTOR_H_20161017
 
 
 #include <iostream>
@@ -33,4 +33,4 @@ private:
 std::ostream& operator<<(std::ostream& ostrm, Vector& obj);
 
 
-#endif //HG_VECTOR_17102016_H
+#endif //HG_VECTOR_H_20161017
