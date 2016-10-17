@@ -2,7 +2,7 @@
 // Created by Борис Вальдман on 17.10.16.
 //
 
-#include "Vector.h"
+#include "vector.h"
 
 ptrdiff_t Vector::size() const {
     return size_;
