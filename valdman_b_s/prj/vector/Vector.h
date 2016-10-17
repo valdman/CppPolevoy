@@ -6,7 +6,6 @@
 #define HG_VECTOR_17102016_H
 
 
-#include <cstddef>
 #include <iostream>
 
 class Vector {
