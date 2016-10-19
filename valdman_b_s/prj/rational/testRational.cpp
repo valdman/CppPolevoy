@@ -12,9 +12,7 @@ int main()
     cout << "Trying to create Rational with zero denuminator ";
     try {
         Rational err{ 1, 0 };
-    }
-    catch (std::invalid_argument ex)
-    {
+    } catch (std::invalid_argument ex) {
         std::cout << "- Exception caught!" << endl;
     }
 

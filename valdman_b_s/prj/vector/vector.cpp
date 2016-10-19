@@ -19,23 +19,21 @@ Vector::Vector() {
 }
 
 double &Vector::operator[](const ptrdiff_t idx) {
-    if(idx >= size_)
-    {
+    if (idx >= size_) {
         throw std::out_of_range("Out of range in vector");
     }
     return *(pointer_+idx);
 }
 
 const double &Vector::operator[](const ptrdiff_t idx) const {
-    if(idx >= size_)
-    {
+    if (idx >= size_) {
         throw std::out_of_range("Out of range in vector");
     }
     return *(pointer_+idx);
 }
 
 void Vector::resize(const ptrdiff_t size) {
-    if(size > size_) {
+    if (size > size_) {
         Vector tmp{*this};
         pointer_ = new double[size];
         *this = tmp;

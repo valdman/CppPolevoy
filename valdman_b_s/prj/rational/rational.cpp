@@ -185,5 +185,5 @@ bool operator==(const Rational &left, const Rational &right) {
 }
 
 bool operator!=(const Rational &left, const Rational &right) {
-    return !operator==(left, right);
+    return !(left == right);
 }

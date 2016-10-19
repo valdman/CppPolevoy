@@ -45,8 +45,9 @@ Complex& Complex::operator*=(const double rhs)
 
 Complex& Complex::operator/=(const double rhs) 
 {
-    if(rhs < 1E-6)
+    if (rhs < 1E-6) {
         throw std::invalid_argument("Divide by zero in Complex");
+    }
     re /= rhs;
     im /= rhs;
     return *this;
@@ -72,28 +73,28 @@ Complex operator*(const Complex& lhs, const Complex& rhs)
 
 Complex operator+(const Complex& lhs, const double rhs)
 {
-    Complex ans{ lhs };
+    Complex ans(lhs);
     ans += Complex{ rhs, 0 };
     return ans;
 };
 
 Complex operator-(const Complex& lhs, const double rhs)
 {
-    Complex ans{ lhs };
+    Complex ans(lhs);
     ans -= Complex{ rhs, 0 };
     return ans;
 };
 
 Complex operator*(const Complex& lhs, const double rhs)
 {
-    Complex ans{ lhs };
+    Complex ans(lhs);
     ans *= Complex{ rhs, 0 };
     return ans;
 };
 
 Complex operator/(const Complex& lhs, const double rhs)
 {
-    Complex ans{ lhs };
+    Complex ans(lhs);
     ans /= rhs;
     return ans;
 };

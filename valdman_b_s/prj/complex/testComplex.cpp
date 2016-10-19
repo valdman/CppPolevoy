@@ -11,8 +11,7 @@ bool testParse(const std::string& str)
     istrm >> z;
     if (istrm.good()) {
         cout << "Read success: " << str << " -> " << z << endl;
-    }
-    else {
+    } else {
         cout << "Read error : " << str << " -> " << z << endl;
     }
     return istrm.good();
@@ -21,7 +20,7 @@ bool testParse(const std::string& str)
 void runArufmeticsTests(Complex a, Complex b)
 {
     cout << "Arifmetics tests: " << endl;
-    Complex z{ a }, j{ b };
+    Complex z(a), j(b);
 
     cout << "Z = " << z << "; Z += {8, 2}; Z = ";
     z += Complex{ 8, 2 };

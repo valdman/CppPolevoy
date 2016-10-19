@@ -11,7 +11,7 @@ void runArifmeticTests()
     first = Vec2d{ 12, -8 };
     cout << "a = " << first << endl << endl;
 
-    cout << "a = " << first << "; b= " << second << "; c= " <<third << endl;
+    cout << "a = " << first << "; b= " << second << "; c= " << third << endl;
     cout << "a+b+c = " << (first + second + third) << endl;
     cout << "a-b = " << (first - second) << endl;
     cout << "a*b (scalar) = " << Vec2d::scalar_multiply(first, second) << endl;

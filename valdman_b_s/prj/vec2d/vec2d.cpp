@@ -62,8 +62,7 @@ Vec2d Vec2d::operator/(const double value)
 
 double&  Vec2d::operator[](const int idx)
 {
-    switch (idx)
-    {
+    switch (idx) {
     case(0):
         return x;
 
@@ -89,8 +88,7 @@ std::ostream& operator<<(std::ostream& ostrm, Vec2d obj)
 
 double Vec2d::operator[](const int idx) const
 {
-    switch (idx)
-    {
+    switch (idx) {
     case(0):
         return x;
 
