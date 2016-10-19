@@ -8,7 +8,7 @@ ptrdiff_t Vector::size() const {
     return size_;
 }
 
-Vector::Vector(int init_size) {
+Vector::Vector(ptrdiff_t init_size) {
     pointer_ = new double[init_size];
     size_ = init_size;
 }

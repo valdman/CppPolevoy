@@ -12,7 +12,7 @@ class Vector {
 
 public:
     Vector();
-    Vector(int init_size);
+    Vector(ptrdiff_t init_size);
     Vector(const Vector& vector);
     ~Vector();
     Vector& operator= (const Vector& rhs);
