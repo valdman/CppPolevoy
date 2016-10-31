@@ -15,7 +15,7 @@ public:
     Vector(ptrdiff_t init_size);
     Vector(const Vector& vector);
     ~Vector();
-    Vector& operator= (const Vector& rhs);
+    Vector& operator=(const Vector& rhs);
 
     double& operator[](const ptrdiff_t idx);
     const double& operator[](const ptrdiff_t idx) const;
