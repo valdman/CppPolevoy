@@ -1,9 +1,9 @@
 #include <iostream>
-#include "matrix2d.h"
+#include "Headers/matrix2d.h"
 
 int main() {
-    const int rowNumber{20};
-    const int columnNumber{20};
+    const int rowNumber{10000};
+    const int columnNumber{20000};
     Matrix2d matrix{rowNumber, columnNumber};
 
     for (ptrdiff_t i = 0; i < rowNumber; ++i) {
@@ -21,7 +21,7 @@ int main() {
     Matrix2d matrix2 {rowNumber, columnNumber};
 
     for (int i = 0; i < 100000; ++i) {
-        matrix2 = matrix2;
+        matrix = matrix2;
         matrix2 = matrix;
     }
 

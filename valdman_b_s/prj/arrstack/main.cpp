@@ -8,13 +8,15 @@ int main() {
     ArrStack stack2;
     int testSize{15};
 
-    cout << "Заполним стэк этим 1 стек и сразу присвоим новому" << endl << " 2-му стеку 1-ый, а в 3-ий скопируем 2-ой: " << endl;
+    cout << "Заполним стэк этим 1 стек и сразу присвоим новому 2-му стеку 1-ый" << endl;
     for (int i = 0; i < testSize; ++i) {
         stack.Push(i);
         double tmp{stack.Check()};
         cout << tmp << " ";
     }
     stack2 = stack;
+
+    cout<< "в 3-ий скопируем 2-ой: " << endl;
     ArrStack stack3{stack2};
     cout << endl;
 

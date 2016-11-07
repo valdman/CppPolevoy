@@ -2,7 +2,7 @@
 // Created by Борис Вальдман on 24.10.16.
 //
 
-#include "matrix2d.h"
+#include "Headers/matrix2d.h"
 
 Matrix2d::Matrix2d(ptrdiff_t rowNumber, ptrdiff_t columnNumber)
 {

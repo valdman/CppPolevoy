@@ -14,11 +14,12 @@ ArrStack& ArrStack::operator=(const ArrStack &rhs)
 {
     if (&rhs != this)
     {
+        double* tmpData = new double[rhs.capasity];
         delete[] data;
         capasity = rhs.capasity;
         cursor = rhs.cursor;
-        data = new double[rhs.capasity];
-        for (int i = 0; i < rhs.capasity; ++i) {
+        data = tmpData;
+        for (int i = 0; i < rhs.cursor; ++i) {
             data[i] = rhs.data[i];
         }
     }
@@ -35,7 +36,7 @@ const double& ArrStack::Pop()
 
 void ArrStack::Push(const double& value)
 {
-    if (cursor >= capasity || capasity == 0) {
+    if (cursor > (capasity - 1) || capasity == 0) {
         Resize(capasity + 10);
     }
     data[++cursor] = value;
