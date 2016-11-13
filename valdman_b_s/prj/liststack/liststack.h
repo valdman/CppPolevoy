@@ -18,17 +18,22 @@ public:
     void push(const double &data);
 
 private:
-    void moveUp();
-    void moveDown();
-    bool isEmpty();
-
-private:
     struct Node{
         Node* pNext_{nullptr};
         double data_{0.0};
     };
 
+private:
+    void moveUp();
+    void moveDown();
+    bool isEmpty();
+
+    void moveDownWithConcreteHead(Node** concreteHead);
+    void moveUpWithConcreteHead(Node** concreteHead);
+
+private:
     Node* head_{nullptr};
+    int size{0};
 };
 
 

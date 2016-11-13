@@ -7,6 +7,7 @@
 
 void ListStack::push(const double &data)
 {
+    ++size;
     if (head_ == nullptr) {
         head_ = new Node();
     }
@@ -31,6 +32,7 @@ void ListStack::moveDown()
 
 double ListStack::pop()
 {
+    --size;
     moveDown();
     if(isEmpty()) {
         std::out_of_range("Out of stack!");
@@ -49,6 +51,34 @@ ListStack::~ListStack()
 
 bool ListStack::isEmpty() {
     return (head_->pNext_ == nullptr);
+}
+
+ListStack::ListStack(const ListStack &stackToCopy)
+{
+    Node* theirFalseHead = stackToCopy.head_;
+    head_ = new Node();
+
+    for (int i = 0; i < stackToCopy.size; ++i) {
+        moveUpWithConcreteHead(&head_);
+    }
+
+    for (int j = 0; j < stackToCopy.size; ++j) {
+        head_->data_= theirFalseHead->data_;
+        moveDownWithConcreteHead(&head_);
+        moveDownWithConcreteHead(&theirFalseHead);
+    }
+}
+
+void ListStack::moveDownWithConcreteHead(ListStack::Node** concreteHead)
+{
+    *concreteHead = (*concreteHead)->pNext_;
+}
+
+void ListStack::moveUpWithConcreteHead(ListStack::Node** concreteHead)
+{
+    Node* upperNode = new Node();
+    upperNode->pNext_ = (*concreteHead);
+    (*concreteHead) = upperNode;
 }
 
 
