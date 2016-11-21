@@ -7,7 +7,8 @@
 
 
 #include <cstddef>
-#include <ostream>
+#include <iosfwd>
+#include <string>
 
 class Matrix2d {
 
@@ -19,6 +20,9 @@ public:
 
     Matrix2d& operator=(const Matrix2d& rhs);
     int& at(ptrdiff_t rowIdx, ptrdiff_t columnIdx);
+
+    void saveToFile(const std::string& path, std::ofstream& os);
+    void loadFromFile(const std::string& path, std::ifstream& is);
 
 private:
     int* dataArrayPointer {nullptr};

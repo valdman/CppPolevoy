@@ -5,22 +5,22 @@
 #ifndef HG_LISTSTACK_H_20161107
 #define HG_LISTSTACK_H_20161107
 
-
+template<class T>
 class ListStack {
 
 public:
-    ListStack()= default;
-    ~ListStack();
-    ListStack(const ListStack& stackToCopy); //todo: construct of copy
-    ListStack& operator=(const ListStack& stackToEqual); //todo: equal operator
+    ListStack<T>()= default;
+    ~ListStack<T>();
+    ListStack<T>(const ListStack<T>& stackToCopy);
+    ListStack<T>& operator=(const ListStack<T>& stackToEqual); //todo: equal operator
 
-    double pop();
-    void push(const double &data);
+    const T& pop();
+    void push(const T& data);
 
 private:
     struct Node{
         Node* pNext_{nullptr};
-        double data_{0.0};
+        T data_{0.0};
     };
 
 private:
@@ -33,7 +33,7 @@ private:
 
 private:
     Node* head_{nullptr};
-    int size{0};
+    ptrdiff_t size{0};
 };
 
 

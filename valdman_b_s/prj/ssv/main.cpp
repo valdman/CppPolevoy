@@ -1,17 +1,16 @@
-#include "Headers/ssv.h"
+#include <string>
+#include <vector>
+#include <iostream>
+
+typedef std::string Cell;
+typedef std::vector<Cell> Row;
+typedef std::vector<Row> Ssv;
+
 
 using namespace std;
 
 int main() {
-    const int row(5), columns(9);
-    Ssv testSsv(columns, row);
 
-    for (int i = 0; i < row; ++i) {
-        for (int j = 0; j < columns; ++j) {
-            testSsv[i][j] = "str№[" + std::to_string(i) + ", " + std::to_string(j) + "], ";
-        }
-    }
 
-    cout << testSsv << endl;
     return 0;
 }

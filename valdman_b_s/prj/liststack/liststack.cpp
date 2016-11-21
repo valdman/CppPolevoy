@@ -5,32 +5,25 @@
 #include "stdexcept"
 #include "liststack.h"
 
-void ListStack::push(const double &data)
-{
-    ++size;
-    if (head_ == nullptr) {
-        head_ = new Node();
-    }
 
-    head_->data_ = data;
-    moveUp();
-}
-
-void ListStack::moveUp()
+template<class T>
+void ListStack<T>::moveUp()
 {
     Node* upperNode = new Node();
     upperNode->pNext_ = head_;
     head_ = upperNode;
 }
 
-void ListStack::moveDown()
+template<class T>
+void ListStack<T>::moveDown()
 {
     Node* downerNode = head_->pNext_;
     delete head_;
     head_ = downerNode;
 }
 
-double ListStack::pop()
+template<class T>
+const T& ListStack<T>::pop()
 {
     --size;
     moveDown();
@@ -41,7 +34,8 @@ double ListStack::pop()
     return ans;
 }
 
-ListStack::~ListStack()
+template<class T>
+ListStack<T>::~ListStack()
 {
     while (!isEmpty())
     {
@@ -49,11 +43,13 @@ ListStack::~ListStack()
     }
 }
 
-bool ListStack::isEmpty() {
+template<class T>
+bool ListStack<T>::isEmpty() {
     return (head_->pNext_ == nullptr);
 }
 
-ListStack::ListStack(const ListStack &stackToCopy)
+template<class T>
+ListStack<T>::ListStack(const ListStack &stackToCopy)
 {
     Node* theirFalseHead = stackToCopy.head_;
     head_ = new Node();
@@ -69,16 +65,30 @@ ListStack::ListStack(const ListStack &stackToCopy)
     }
 }
 
-void ListStack::moveDownWithConcreteHead(ListStack::Node** concreteHead)
+template<class T>
+void ListStack<T>::moveDownWithConcreteHead(ListStack::Node** concreteHead)
 {
     *concreteHead = (*concreteHead)->pNext_;
 }
 
-void ListStack::moveUpWithConcreteHead(ListStack::Node** concreteHead)
+template<class T>
+void ListStack<T>::moveUpWithConcreteHead(ListStack::Node** concreteHead)
 {
     Node* upperNode = new Node();
     upperNode->pNext_ = (*concreteHead);
     (*concreteHead) = upperNode;
+}
+
+template<class T>
+void ListStack<T>::push(const T &data) {
+    ++size;
+    if (head_ == nullptr) {
+        head_ = new Node();
+    }
+
+    head_->data_ = data;
+    moveUp();
+
 }
 
 

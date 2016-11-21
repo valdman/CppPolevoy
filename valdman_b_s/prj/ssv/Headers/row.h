@@ -6,33 +6,33 @@
 #define SSV_ROW_H
 
 
-#include <cstddef>
+#include <vector>
 #include <string>
-#include <iostream>
+#include <iosfwd>
 
 class Row {
 public:
     Row() = default;
 
-    Row(ptrdiff_t size_);
+    ~Row() = default;
 
-    ~Row();
+    ptrdiff_t getSize() { return data.size(); };
 
-    std::string &operator[](const ptrdiff_t idx);
+    std::ostream &writeTo(std::ostream &os) const {
+        for (ptrdiff_t i = 0; i < data.size(); ++i) {
+            os << data[i];
+        }
+        return os;
+    };
 
-    const std::string &operator[](const ptrdiff_t idx) const;
-
-    void Resize(ptrdiff_t new_size);
-
-    std::ostream &WriteTo(std::ostream &os) const;
-
-private:
-    ptrdiff_t size{0};
-    std::string *pointer{nullptr};
-
+public:
+    std::vector<std::string> data;
 };
 
-std::ostream &operator<<(std::ostream &os, const Row &row);
+std::ostream &operator<<(std::ostream &os, const Row &row) {
+    row.writeTo(os);
+    return os;
+};
 
 
 #endif //SSV_ROW_H
