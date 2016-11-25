@@ -12,7 +12,9 @@ void showHelp() {
             << "\'save\' - Export data to file" << endl << endl
 
             << "\'sep\' - Change separator (\',\' by default)" << endl
-            << "\'add - Add row to file end" << endl
+            << "\'add\' - Add row to file end" << endl
+            << "\'ins\' - Add row to file end" << endl
+            << "\'rem\' - Add row to file end" << endl
             << "\'h\' or \'?\' - Show this help" << endl
             << "\'q\' - Quit" << endl;
 }
@@ -36,6 +38,8 @@ int main() {
                                     {"add",  5},
                                     {"sh",   6},
                                     {"sep",  7},
+                                    {"ins",  8},
+                                    {"rem",  9},
                                     {"q",    0},
                                     {"h",    -1},
                                     {"?",    -1}};
@@ -148,6 +152,60 @@ int main() {
                 } else {
                     ssvService.separator = newSeparatorStr[0];
                 }
+                break;
+            }
+
+            case 8: {
+                if (!dataLoaded) {
+                    cout << "No data loaded" << endl;
+                    break;
+                }
+                string numberOfRowToInsertStr;
+                ptrdiff_t numberOfRowToInsert;
+                cout << "Write number of row to insert: ";
+                getline(cin, numberOfRowToInsertStr);
+                try {
+                    numberOfRowToInsert = std::atoi(numberOfRowToInsertStr.c_str());
+                } catch (exception) {
+                    cout << "Ivalid number!" << endl;
+                    break;
+                }
+                if (numberOfRowToInsert >= ssv.size() || numberOfRowToInsert < 0) {
+                    cout << "More than number of rows. (In loaded data " << ssv.size() << " rows)" << endl;
+                    break;
+                }
+                RawRow rawRow;
+                cout << "Enter row to insert: ";
+                getline(cin, rawRow);
+                Row rowToInsert{ssvService.parseStrToRow(rawRow)};
+                if (rowToInsert.size() != ssv[0].size()) {
+                    cout << "This row not valid for this CSV. Use row with " << ssv.begin()->size() << " cells, not "
+                         << rowToInsert.size() << endl;
+                }
+                ssv.insert(ssv.begin() + numberOfRowToInsert, rowToInsert);
+                break;
+            }
+
+            case 9: {
+                if (!dataLoaded) {
+                    cout << "No data loaded" << endl;
+                    break;
+                }
+                string numberOfRowToRemoveStr;
+                ptrdiff_t numberOfRowToRem;
+                cout << "Write number of row to remove: ";
+                getline(cin, numberOfRowToRemoveStr);
+                try {
+                    numberOfRowToRem = std::atoi(numberOfRowToRemoveStr.c_str());
+                } catch (exception) {
+                    cout << "Ivalid number!" << endl;
+                    break;
+                }
+                if (numberOfRowToRem >= ssv.size() || numberOfRowToRem < 0) {
+                    cout << "More than number of rows. (In loaded data " << ssv.size() << " rows)" << endl;
+                    break;
+                }
+                ssv.erase(ssv.begin() + numberOfRowToRem);
                 break;
             }
 
