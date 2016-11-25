@@ -10,6 +10,7 @@ Ssv SsvService::parseSsvFromString(const std::string &inputData) {
     Ssv ssv;
     bool inQuote(false);
     bool newLine(false);
+    int columnNumber{-1};
     Cell cell;
     ssv.clear();
     Row row;
@@ -39,7 +40,12 @@ Ssv SsvService::parseSsvFromString(const std::string &inputData) {
                 } else {
                     if (!newLine) {
                         row.push_back(cell);
-                        ssv.push_back(row);
+                        if (row.size() == columnNumber || columnNumber == -1)
+                            ssv.push_back(row);
+                        else {
+                            throw std::runtime_error(
+                                    "Wrong format of CSV (number of cell in some row incomparable with another)");
+                        }
                         cell.clear();
                         row.clear();
                         newLine = true;
@@ -61,7 +67,12 @@ Ssv SsvService::parseSsvFromString(const std::string &inputData) {
 
     if (row.size())
         std::reverse(row.begin(), row.end());
-    ssv.push_back(row);
+
+    if (row.size() == columnNumber || columnNumber == -1)
+        ssv.push_back(row);
+    else {
+        throw std::runtime_error("Wrong format of CSV (number of cell in some row incomparable with another)");
+    }
 
     return ssv;
 }
@@ -81,7 +92,7 @@ Row SsvService::parseStrToRow(const RawRow &rawRow) {
     Row resultRow;
 
     Cell::const_iterator aChar = rawRow.begin();
-    while (*aChar != '\r' && *aChar != '\n') {
+    while (*aChar != '\r' && *aChar != '\n' && *aChar != '\0') {
         switch (*aChar) {
             case '"':
                 inQuote = !inQuote;
@@ -99,10 +110,14 @@ Row SsvService::parseStrToRow(const RawRow &rawRow) {
             default:
                 cell.push_back(*aChar);
                 break;
-                ++aChar;
         }
-        if (cell.size())
-            resultRow.push_back(cell);
+
+
+        ++aChar;
+    }
+
+    if (cell.size()) {
+        resultRow.push_back(cell);
     }
 
     return resultRow;

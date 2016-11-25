@@ -24,6 +24,8 @@ public:
 
     Ssv parseSsvFromFile(const std::string &filePath);
 
+    void saveSsvToFile(const std::string &filePath);
+
     Row parseStrToRow(const RawRow &rawRow);
 
 public:
