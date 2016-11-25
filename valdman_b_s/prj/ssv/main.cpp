@@ -13,8 +13,8 @@ void showHelp() {
 
             << "\'sep\' - Change separator (\',\' by default)" << endl
             << "\'add\' - Add row to file end" << endl
-            << "\'ins\' - Add row to file end" << endl
-            << "\'rem\' - Add row to file end" << endl
+            << "\'ins\' - Insert row to position" << endl
+            << "\'rem\' - Remove row from position" << endl
             << "\'h\' or \'?\' - Show this help" << endl
             << "\'q\' - Quit" << endl;
 }
