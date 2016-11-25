@@ -17,46 +17,37 @@ Ssv SsvService::parseSsvFromString(const std::string &inputData) {
 
     Cell::const_iterator aChar = inputData.begin();
     while (aChar != inputData.end()) {
-        switch (*aChar) {
-            case '"':
-                newLine = false;
-                inQuote = !inQuote;
-                break;
-
-            case ',':
-                newLine = false;
-                if (inQuote) {
-                    cell += *aChar;
-                } else {
+        if (*aChar == '"') {
+            newLine = false;
+            inQuote = !inQuote;
+        } else if (*aChar == separator) {
+            newLine = false;
+            if (inQuote) {
+                cell += *aChar;
+            } else {
+                row.push_back(cell);
+                cell.clear();
+            }
+        } else if (*aChar == '\n' || *aChar == '\r') {
+            if (inQuote) {
+                cell += *aChar;
+            } else {
+                if (!newLine) {
                     row.push_back(cell);
-                    cell.clear();
-                }
-                break;
-
-            case '\n':
-            case '\r':
-                if (inQuote) {
-                    cell += *aChar;
-                } else {
-                    if (!newLine) {
-                        row.push_back(cell);
-                        if (row.size() == columnNumber || columnNumber == -1)
-                            ssv.push_back(row);
-                        else {
-                            throw std::runtime_error(
-                                    "Wrong format of CSV (number of cell in some row incomparable with another)");
-                        }
-                        cell.clear();
-                        row.clear();
-                        newLine = true;
+                    if (row.size() == columnNumber || columnNumber == -1)
+                        ssv.push_back(row);
+                    else {
+                        throw std::runtime_error(
+                                "Wrong format of CSV (number of cell in some row incomparable with another)");
                     }
+                    cell.clear();
+                    row.clear();
+                    newLine = true;
                 }
-                break;
-
-            default:
-                newLine = false;
-                cell.push_back(*aChar);
-                break;
+            }
+        } else {
+            newLine = false;
+            cell.push_back(*aChar);
         }
 
         aChar++;
@@ -92,26 +83,20 @@ Row SsvService::parseStrToRow(const RawRow &rawRow) {
     Row resultRow;
 
     Cell::const_iterator aChar = rawRow.begin();
+
     while (*aChar != '\r' && *aChar != '\n' && *aChar != '\0') {
-        switch (*aChar) {
-            case '"':
-                inQuote = !inQuote;
-                break;
-
-            case ',':
-                if (inQuote) {
-                    cell += *aChar;
-                } else {
-                    resultRow.push_back(cell);
-                    cell.clear();
-                }
-                break;
-
-            default:
-                cell.push_back(*aChar);
-                break;
+        if (*aChar == '"') {
+            inQuote = !inQuote;
+        } else if (*aChar == separator) {
+            if (inQuote) {
+                cell += *aChar;
+            } else {
+                resultRow.push_back(cell);
+                cell.clear();
+            }
+        } else {
+            cell.push_back(*aChar);
         }
-
 
         ++aChar;
     }
@@ -125,6 +110,7 @@ Row SsvService::parseStrToRow(const RawRow &rawRow) {
 
 std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv) {
     printSsv(ostrm, ssv, ssv.size());
+    return ostrm;
 }
 
 std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv, const ptrdiff_t numberOfRowsToShow) {
@@ -144,4 +130,20 @@ std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv, const pt
     ostrm << std::endl;
 
     return ostrm;
+}
+
+void SsvService::saveSsvToFile(const Ssv &ssv, const std::string &filePath) {
+    std::ofstream fileToSave;
+    fileToSave.open(filePath);
+
+    for (int i = 0; i < ssv.size(); ++i) {
+        Row currentRow{ssv[i]};
+        for (int j = 0; j < currentRow.size(); ++j) {
+            fileToSave << '\"' << currentRow[j] << "\"" << separator;
+        }
+
+        fileToSave << std::endl;
+    }
+
+    fileToSave.close();
 }

@@ -24,7 +24,8 @@ public:
 
     Ssv parseSsvFromFile(const std::string &filePath);
 
-    void saveSsvToFile(const std::string &filePath);
+
+    void saveSsvToFile(const Ssv &ssv, const std::string &filePath);
 
     Row parseStrToRow(const RawRow &rawRow);
 
@@ -32,6 +33,9 @@ public:
     std::ostream &printSsv(std::ostream &ostrm, const Ssv &ssv);
 
     std::ostream &printSsv(std::ostream &ostrm, const Ssv &ssv, const ptrdiff_t numberOfRowsToShow);
+
+public:
+    char separator{','};
 };
 
 

@@ -8,9 +8,11 @@ void showHelp() {
             << "\'open\' - Load data from CSV" << endl
             << "\'man\' - Manually enter CSV" << endl
             << "\'emp\' - Load empty project" << endl
-            << "\'save\' - Export data to file" << endl
-            << "\'add - Add row to file end" << endl
             << "\'sh\' - Show data" << endl
+            << "\'save\' - Export data to file" << endl << endl
+
+            << "\'sep\' - Change separator (\',\' by default)" << endl
+            << "\'add - Add row to file end" << endl
             << "\'h\' or \'?\' - Show this help" << endl
             << "\'q\' - Quit" << endl;
 }
@@ -27,19 +29,20 @@ int main() {
     while (!wannaExit) {
         cout << ">";
         string action;
-        std::map<string, char> dict{{"open", '1'},
-                                    {"man",  '2'},
-                                    {"emp",  '3'},
-                                    {"save", '4'},
-                                    {"add",  '5'},
-                                    {"sh",   '6'},
-                                    {"q",    'q'},
-                                    {"h",    'h'},
-                                    {"?",    'h'}};
+        std::map<string, char> dict{{"open", 1},
+                                    {"man",  2},
+                                    {"emp",  3},
+                                    {"save", 4},
+                                    {"add",  5},
+                                    {"sh",   6},
+                                    {"sep",  7},
+                                    {"q",    0},
+                                    {"h",    -1},
+                                    {"?",    -1}};
         getline(cin, action);
 
         switch (dict[action]) {
-            case '1' : {
+            case 1 : {
                 cout << "Enter full filepath: ";
                 string path;
                 getline(cin, path);
@@ -49,7 +52,7 @@ int main() {
                 break;
             }
 
-            case '2': {
+            case 2: {
                 if (dataLoaded) {
                     cout << "Data already loaded!" << endl;
                     break;
@@ -73,11 +76,14 @@ int main() {
                 break;
             }
 
-            case '3': {
+            case 3: {
+                dataLoaded = false;
+                ssv.clear();
+                cout << "Workspace clear" << endl;
                 break;
             }
 
-            case '4': {
+            case 4: {
                 if (!dataLoaded) {
                     cout << "Not data loaded!" << endl;
                     break;
@@ -85,10 +91,11 @@ int main() {
                 cout << "Enter full filepath to save: ";
                 string pathToSave;
                 getline(cin, pathToSave);
+                ssvService.saveSsvToFile(ssv, pathToSave);
                 break;
             }
 
-            case '5': {
+            case 5: {
                 if (!dataLoaded) {
                     cout << "Not data loaded!" << endl;
                     break;
@@ -107,7 +114,7 @@ int main() {
                 break;
             }
 
-            case '6': {
+            case 6: {
                 if (!dataLoaded) {
                     cout << "No data loaded!" << endl;
                     break;
@@ -132,18 +139,30 @@ int main() {
                 break;
             }
 
-            case 'h': {
+            case 7: {
+                string newSeparatorStr;
+                cout << "Enter new separator (comma for .csv is preferable): ";
+                getline(cin, newSeparatorStr);
+                if (newSeparatorStr.length() != 1) {
+                    cout << "Separator contain only 1 symbol!" << endl;
+                } else {
+                    ssvService.separator = newSeparatorStr[0];
+                }
+                break;
+            }
+
+            case -1: {
                 showHelp();
                 break;
             }
 
-            case 'q': {
+            case 0: {
                 wannaExit = true;
                 break;
             }
 
             default: {
-                cout << "Wrong command" << endl;
+                cout << "Wrong command. \'?\' or \'h\' to see help" << endl;
                 break;
             }
 
