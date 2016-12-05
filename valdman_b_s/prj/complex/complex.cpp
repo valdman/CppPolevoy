@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iosfwd>
 #include <sstream>
 
 #include "complex.h"
@@ -99,11 +99,6 @@ Complex operator/(const Complex& lhs, const double rhs)
     return ans;
 };
 
-std::ostream& operator<<(std::ostream& ostrm, const Complex& rhs)
-{
-    return rhs.writeTo(ostrm);
-}
-
 std::istream& operator >> (std::istream& istrm, Complex& rhs)
 {
     return rhs.readFrom(istrm);
@@ -119,10 +114,9 @@ Complex::Complex(const double real, const double imaginary)
     , im(imaginary)
 { }
 
-std::ostream& Complex::writeTo(std::ostream& ostrm) const
-{
-    ostrm << leftBrace << re << separator << im << rightBrace;
-    return ostrm;
+std::ostream &Complex::writeTo(std::ostream &os) const {
+    os << leftBrace << re << separator << im << rightBrace;
+    return os;
 }
 
 std::istream& Complex::readFrom(std::istream& istrm)

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/testVector.cpp
+iostream
+-
+vec2d.h
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.h
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.cpp
+vec2d.h
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.h
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.h
+iostream
+-
+cstdlib
+-
+cmath
+-
+

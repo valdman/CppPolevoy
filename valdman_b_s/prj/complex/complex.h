@@ -2,8 +2,9 @@
 #define HG_COMPLEX_H_20160926
 
 #include <cmath>
+#include <printablei.h>
 
-struct Complex
+struct Complex : PrintableI
 {
     Complex() = default;
     explicit Complex(const double real);
@@ -20,8 +21,12 @@ struct Complex
     Complex& operator*=(const double rhs);
     Complex& operator/=(const double rhs);
 
-    std::ostream& writeTo(std::ostream& ostrm) const;
     std::istream& readFrom(std::istream& istrm);
+
+    std::ostream &writeTo(std::ostream &os) const override;
+
+
+public:
 
     double re{ 0.0 };
     double im{ 0.0 };
@@ -39,7 +44,6 @@ Complex operator-(const Complex& lhs, const double rhs);
 Complex operator*(const Complex& lhs, const double rhs);
 Complex operator/(const Complex& lhs, const double rhs);
 
-std::ostream& operator<< (std::ostream& ostrm, const Complex& rhs);
 std::istream& operator >> (std::istream& istrm, Complex& rhs);
 
 #endif // HG_COMPLEX_H_20160926

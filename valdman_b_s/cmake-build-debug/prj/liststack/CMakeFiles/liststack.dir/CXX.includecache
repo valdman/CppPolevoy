@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/liststack.h
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/main.cpp
+iostream
+-
+liststack.h
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/liststack.h
+

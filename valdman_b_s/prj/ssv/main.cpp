@@ -9,19 +9,19 @@ void showHelp() {
             << "\'man\' - Manually enter CSV" << endl
             << "\'emp\' - Load empty project" << endl
             << "\'sh\' - Show data" << endl
-            << "\'save\' - Export data to file" << endl << endl
+            << "\'save\' - Export data to file" << endl
+            << "\'sep\' - Change separator (\',\' by default)" << endl << endl
 
-            << "\'sep\' - Change separator (\',\' by default)" << endl
             << "\'add\' - Add row to file end" << endl
             << "\'ins\' - Insert row to position" << endl
-            << "\'rem\' - Remove row from position" << endl
+            << "\'rem\' - Remove row from position" << endl << endl
+
             << "\'h\' or \'?\' - Show this help" << endl
             << "\'q\' - Quit" << endl;
 }
 
 int main() {
-    SsvService ssvService;
-    Ssv ssv;
+    SsvData ssv;
 
     bool wannaExit(false);
     bool dataLoaded(false);
@@ -30,6 +30,7 @@ int main() {
 
     while (!wannaExit) {
         cout << ">";
+        string actionStr;
         string action;
         std::map<string, char> dict{{"open", 1},
                                     {"man",  2},
@@ -40,80 +41,74 @@ int main() {
                                     {"sep",  7},
                                     {"ins",  8},
                                     {"rem",  9},
-                                    {"q",    0},
-                                    {"h",    -1},
-                                    {"?",    -1}};
-        getline(cin, action);
+                                    {"q",    10},
+                                    {"h",    11},
+                                    {"?",    11}};
+        getline(cin, actionStr);
 
-        switch (dict[action]) {
+
+        switch (dict[actionStr]) {
             case 1 : {
                 cout << "Enter full filepath: ";
                 string path;
                 getline(cin, path);
-                ssv = ssvService.parseSsvFromFile(path);
-                dataLoaded = true;
+                ssv.parseSsvFromFile(path);
                 cout << endl;
                 break;
             }
 
             case 2: {
-                if (dataLoaded) {
+                if (ssv.isIsDataLoaded()) {
                     cout << "Data already loaded!" << endl;
                     break;
                 }
-                dataLoaded = true;
-                RawRow line;
+                string line;
                 do {
                     getline(cin, line);
                     if (line.empty()) break;
 
-                    Row rowToAdd{ssvService.parseStrToRow(line)};
-
-                    if (ssv.empty() || rowToAdd.size() == ssv.begin()->size()) {
-                        ssv.push_back(rowToAdd);
-                    } else {
-                        cout << "This row not valid for this CSV. Use row with " << ssv.begin()->size()
-                             << " cells, not " << rowToAdd.size() << endl;
-                    }
+                    ssv.addRow(line);
 
                 } while (!line.empty());
                 break;
             }
 
             case 3: {
-                dataLoaded = false;
                 ssv.clear();
                 cout << "Workspace clear" << endl;
                 break;
             }
 
             case 4: {
-                if (!dataLoaded) {
+                if (!ssv.isIsDataLoaded()) {
                     cout << "Not data loaded!" << endl;
                     break;
                 }
                 cout << "Enter full filepath to save: ";
                 string pathToSave;
                 getline(cin, pathToSave);
-                ssvService.saveSsvToFile(ssv, pathToSave);
+                if (ssv.saveSsvToFile(pathToSave)) {
+                    cout << "File saved" << endl;
+                } else {
+                    cout << "error" << endl;
+                }
                 break;
             }
 
             case 5: {
-                if (!dataLoaded) {
+                if (!ssv.isIsDataLoaded()) {
                     cout << "Not data loaded!" << endl;
                     break;
                 }
-                RawRow rawRow;
+                string rawRow;
                 cout << "Enter row: ";
                 getline(cin, rawRow);
-                Row rowToAdd(ssvService.parseStrToRow(rawRow));
+                ;
 
-                if (rowToAdd.size() == ssv.begin()->size() || ssv.begin()->size() == 0) {
-                    ssv.push_back(rowToAdd);
+                if (ssv.addRow(rawRow)){
+                    cout << "Row successfully added" << endl;
                 } else {
-                    cout << "This row not valid for this CSV. Use row with " << ssv.begin()->size() << " cells, not "
-                         << rowToAdd.size() << endl;
+                    cout << "error" << endl;
                 }
                 break;
             }
@@ -129,7 +124,7 @@ int main() {
 
 
                 if (numberToShowStr == "all") {
-                    ssvService.printSsv(cout, ssv);
+                    ssv.printSsv(cout);
                 } else {
                     int numberToShow;
                     try {
@@ -138,7 +133,7 @@ int main() {
                         cout << "Wrong number!" << endl;
                         break;
                     }
-                    ssvService.printSsv(cout, ssv, numberToShow);
+                    ssv.printSsv(cout, numberToShow);
                 }
                 break;
             }
@@ -150,13 +145,13 @@ int main() {
                 if (newSeparatorStr.length() != 1) {
                     cout << "Separator contain only 1 symbol!" << endl;
                 } else {
-                    ssvService.separator = newSeparatorStr[0];
+                    ssv.changeSeparator(newSeparatorStr[0]);
                 }
                 break;
             }
 
             case 8: {
-                if (!dataLoaded) {
+                if (!ssv.isIsDataLoaded()) {
                     cout << "No data loaded" << endl;
                     break;
                 }
@@ -170,19 +165,18 @@ int main() {
                     cout << "Ivalid number!" << endl;
                     break;
                 }
-                if (numberOfRowToInsert >= ssv.size() || numberOfRowToInsert < 0) {
-                    cout << "More than number of rows. (In loaded data " << ssv.size() << " rows)" << endl;
-                    break;
-                }
-                RawRow rawRow;
+
+                string rawRow;
                 cout << "Enter row to insert: ";
                 getline(cin, rawRow);
-                Row rowToInsert{ssvService.parseStrToRow(rawRow)};
-                if (rowToInsert.size() != ssv[0].size()) {
-                    cout << "This row not valid for this CSV. Use row with " << ssv.begin()->size() << " cells, not "
-                         << rowToInsert.size() << endl;
+
+                if (ssv.insertRow(rawRow, numberOfRowToInsert))
+                {
+                    cout << "Successfully inserted" << endl;
+                } else {
+                    cout << "err" << endl;
                 }
-                ssv.insert(ssv.begin() + numberOfRowToInsert, rowToInsert);
+
                 break;
             }
 
@@ -201,20 +195,21 @@ int main() {
                     cout << "Ivalid number!" << endl;
                     break;
                 }
-                if (numberOfRowToRem >= ssv.size() || numberOfRowToRem < 0) {
-                    cout << "More than number of rows. (In loaded data " << ssv.size() << " rows)" << endl;
-                    break;
+
+                if (ssv.removeRow(numberOfRowToRem)) {
+                    cout << "Successfully removed" << endl;
+                } else {
+                    cout << "err";
                 }
-                ssv.erase(ssv.begin() + numberOfRowToRem);
                 break;
             }
 
-            case -1: {
+            case 11: {
                 showHelp();
                 break;
             }
 
-            case 0: {
+            case 10: {
                 wannaExit = true;
                 break;
             }

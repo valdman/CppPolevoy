@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="valdman_b_s"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\prj\;CMake Files\prj\vector\;CMake Files\prj\arrstack\;CMake Files\prj\complex\;CMake Files\prj\liststack\;CMake Files\prj\matrix2d\;CMake Files\prj\nod\;CMake Files\prj\rational\;CMake Files\prj\ssv\;CMake Files\prj\vec2d\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arrstack">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/arrstack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 arrstack"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arrstack/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/arrstack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 arrstack/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/arrstack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="complex">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/complex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 complex"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="complex/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/complex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 complex/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/complex/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="liststack">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/liststack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 liststack"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="liststack/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/liststack" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 liststack/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/liststack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="matrix2d">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/matrix2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 matrix2d"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="matrix2d/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/matrix2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 matrix2d/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/matrix2d/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nod">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/nod" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 nod"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nod/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/nod" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 nod/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/nod/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rational">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/rational" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 rational"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rational/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/rational" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 rational/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/rational/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ssv">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/ssv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 ssv"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ssv/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/ssv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 ssv/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vec2d">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/vec2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 vec2d"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vec2d/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/vec2d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 vec2d/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Vector">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Vector" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 Vector"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Vector/fast">
+				<Option output="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Vector" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/boris/ClionProjects/polevoy/valdman_b_s/./prj/interfaces"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 Vector/fast"/>
+					<CompileFile command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/local/bin/gmake -j4 -f &quot;/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vector/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.cpp">
+			<Option target="arrstack"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.h">
+			<Option target="arrstack"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/main.cpp">
+			<Option target="arrstack"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/complex/complex.cpp">
+			<Option target="complex"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/complex/complex.h">
+			<Option target="complex"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/complex/testComplex.cpp">
+			<Option target="complex"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/liststack.h">
+			<Option target="liststack"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/main.cpp">
+			<Option target="liststack"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/Headers/matrix2d.h">
+			<Option target="matrix2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/Headers/serializer.h">
+			<Option target="matrix2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/Source/matrix2d.cpp">
+			<Option target="matrix2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/Source/serializer.cpp">
+			<Option target="matrix2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/main.cpp">
+			<Option target="matrix2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/nod/nod.cpp">
+			<Option target="nod"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/rational/rational.cpp">
+			<Option target="rational"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/rational/rational.h">
+			<Option target="rational"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/rational/testRational.cpp">
+			<Option target="rational"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/main.cpp">
+			<Option target="ssv"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.cpp">
+			<Option target="ssv"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.h">
+			<Option target="ssv"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/testVector.cpp">
+			<Option target="vec2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.cpp">
+			<Option target="vec2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/vec2d.h">
+			<Option target="vec2d"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vector/testVector.cpp">
+			<Option target="Vector"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vector/vector.cpp">
+			<Option target="Vector"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vector/vector.h">
+			<Option target="Vector"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vector/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\vector\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vector/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\vector\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\arrstack\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\arrstack\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/complex/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\complex\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/complex/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\complex\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\liststack\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/liststack/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\liststack\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\matrix2d\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/matrix2d/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\matrix2d\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/nod/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\nod\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/nod/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\nod\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/rational/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\rational\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/rational/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\rational\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\ssv\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\ssv\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\vec2d\"/>
+		</Unit>
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/vec2d/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj\vec2d\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

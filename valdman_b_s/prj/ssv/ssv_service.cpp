@@ -6,7 +6,15 @@
 #include <iomanip>
 #include "ssv_service.h"
 
-Ssv SsvService::parseSsvFromString(const std::string &inputData) {
+typedef std::string Cell;
+typedef std::string RawRow;
+typedef std::vector<Cell> Row;
+typedef std::vector<Row> Ssv;
+
+bool SsvData::parseSsvFromString(const std::string &inputData) {
+    if (isDataLoaded) {
+        return false;
+    }
     Ssv ssv;
     bool inQuote(false);
     bool newLine(false);
@@ -65,19 +73,24 @@ Ssv SsvService::parseSsvFromString(const std::string &inputData) {
         throw std::runtime_error("Wrong format of CSV (number of cell in some row incomparable with another)");
     }
 
-    return ssv;
+    data = ssv;
+    isDataLoaded = true;
+    return true;
 }
 
-Ssv SsvService::parseSsvFromFile(const std::string &filePath) {
+bool SsvData::parseSsvFromFile(const std::string &filePath) {
+    if (isDataLoaded) {
+        return false;
+    }
     std::ifstream file(filePath);
 
     std::string str((std::istreambuf_iterator<char>(file)),
                     std::istreambuf_iterator<char>());
 
-    return parseSsvFromString(str);
+    return parseSsvFromString(str);;
 }
 
-Row SsvService::parseStrToRow(const RawRow &rawRow) {
+Row SsvData::parseStrToRow(const RawRow &rawRow) {
     bool inQuote(false);
     Cell cell;
     Row resultRow;
@@ -108,20 +121,20 @@ Row SsvService::parseStrToRow(const RawRow &rawRow) {
     return resultRow;
 }
 
-std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv) {
-    printSsv(ostrm, ssv, ssv.size());
+std::ostream &SsvData::printSsv(std::ostream &ostrm) {
+    printSsv(ostrm, data.size());
     return ostrm;
 }
 
-std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv, const ptrdiff_t numberOfRowsToShow) {
-    if (numberOfRowsToShow > ssv.size() || numberOfRowsToShow < 1) {
+std::ostream &SsvData::printSsv(std::ostream &ostrm, const ptrdiff_t numberOfRowsToShow) {
+    if (numberOfRowsToShow > data.size() || numberOfRowsToShow < 1) {
         throw std::out_of_range("Too much row to show");
     }
 
     Row thisRow;
 
     for (int i = 0; i < numberOfRowsToShow; ++i) {
-        thisRow = ssv[i];
+        thisRow = data[i];
         for (int j = 0; j < thisRow.size(); ++j) {
             ostrm << std::setw(13) << thisRow[j] << "\t";
         }
@@ -132,12 +145,15 @@ std::ostream &SsvService::printSsv(std::ostream &ostrm, const Ssv &ssv, const pt
     return ostrm;
 }
 
-void SsvService::saveSsvToFile(const Ssv &ssv, const std::string &filePath) {
+bool SsvData::saveSsvToFile(const std::string &filePath) {
+    if (!isDataLoaded) {
+        return false;
+    }
     std::ofstream fileToSave;
     fileToSave.open(filePath);
 
-    for (int i = 0; i < ssv.size(); ++i) {
-        Row currentRow{ssv[i]};
+    for (int i = 0; i < data.size(); ++i) {
+        Row currentRow{data[i]};
         for (int j = 0; j < currentRow.size(); ++j) {
             fileToSave << '\"' << currentRow[j] << "\"" << separator;
         }
@@ -146,4 +162,62 @@ void SsvService::saveSsvToFile(const Ssv &ssv, const std::string &filePath) {
     }
 
     fileToSave.close();
+    return true;
+}
+
+bool SsvData::changeSeparator(const char &newSeparator)
+{
+    separator = newSeparator;
+}
+
+char SsvData::getSeparator()
+{
+    return separator;
+}
+
+bool SsvData::isIsDataLoaded() const
+{
+    return isDataLoaded;
+}
+
+bool SsvData::addRow(const RawRow &rawRow)
+{
+    Row rowToAdd{parseStrToRow(rawRow)};
+
+    if (data.empty() || rowToAdd.size() == data.begin()->size()) {
+        data.push_back(rowToAdd);
+    } else {
+        return false;
+    }
+
+    return true;
+}
+
+bool SsvData::clear()
+{
+    data.clear();
+    isDataLoaded  = false;
+}
+
+bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
+{
+    if (idxToIns >= data.size() || idxToIns < 0) {
+        return false;
+    }
+
+    Row rowToInsert{parseStrToRow(rawRow)};
+    if (rowToInsert.size() != data[0].size()) {
+        return false;
+    }
+    data.insert(data.begin() + idxToIns, rowToInsert);
+}
+
+bool SsvData::removeRow(ptrdiff_t idxToRem)
+{
+    if (idxToRem >= data.size() || idxToRem < 0) {
+        data.erase(data.begin() + idxToRem);
+        return true;
+    } else {
+        return false;
+    }
 }

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.cpp
+stdexcept
+-
+arrstack.h
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.h
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.h
+
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/main.cpp
+iostream
+-
+arrstack.h
+/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/arrstack/arrstack.h
+

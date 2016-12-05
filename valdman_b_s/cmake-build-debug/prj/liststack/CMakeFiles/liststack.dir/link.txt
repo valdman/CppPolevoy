@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -pedantic -Wall -Wextra -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/liststack.dir/main.cpp.o  -o liststack 

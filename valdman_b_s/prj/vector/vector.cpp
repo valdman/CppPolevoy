@@ -44,7 +44,7 @@ void Vector::resize(const ptrdiff_t size)
         delete[] pointer_;
         pointer_ = new double[size];
         *this = tmp;
-        this->size_ = size_;
+        this->size_ = size;
     }
     size_ = size;
 }

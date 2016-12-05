@@ -9,13 +9,54 @@ template<class T>
 class ListStack {
 
 public:
-    ListStack<T>()= default;
-    ~ListStack<T>();
-    ListStack<T>(const ListStack<T>& stackToCopy);
-    ListStack<T>& operator=(const ListStack<T>& stackToEqual); //todo: equal operator
+    ListStack()= default;
+    ~ListStack()
+    {
+        while (!isEmpty())
+        {
+            pop();
+        }
+    }
 
-    const T& pop();
-    void push(const T& data);
+    ListStack(const ListStack& stackToCopy)
+    {
+        Node* theirFalseHead = stackToCopy.head_;
+        head_ = new Node();
+
+        for (int i = 0; i < stackToCopy.size; ++i) {
+            moveUpWithConcreteHead(&head_);
+        }
+
+        for (int j = 0; j < stackToCopy.size; ++j) {
+            head_->data_= theirFalseHead->data_;
+            moveDownWithConcreteHead(&head_);
+            moveDownWithConcreteHead(&theirFalseHead);
+        }
+    }
+
+    ListStack& operator=(const ListStack<T>& stackToEqual); //todo: equal operator
+
+    const T& pop()
+    {
+        --size;
+        moveDown();
+        if(isEmpty()) {
+            std::out_of_range("Out of stack!");
+        }
+        return head_->data_;
+    }
+
+    void push(const T& data)
+    {
+        ++size;
+        if (head_ == nullptr) {
+            head_ = new Node();
+        }
+
+        head_->data_ = data;
+        moveUp();
+
+    }
 
 private:
     struct Node{
@@ -24,12 +65,36 @@ private:
     };
 
 private:
-    void moveUp();
-    void moveDown();
-    bool isEmpty();
+    void moveUp()
+    {
+        Node* upperNode = new Node();
+        upperNode->pNext_ = head_;
+        head_ = upperNode;
+    }
 
-    void moveDownWithConcreteHead(Node** concreteHead);
-    void moveUpWithConcreteHead(Node** concreteHead);
+    void moveDown()
+    {
+        Node* downerNode = head_->pNext_;
+        delete head_;
+        head_ = downerNode;
+    }
+
+    bool isEmpty()
+    {
+        return (head_->pNext_ == nullptr);
+    }
+
+    void moveDownWithConcreteHead(Node** concreteHead)
+    {
+        *concreteHead = (*concreteHead)->pNext_;
+    }
+
+    void moveUpWithConcreteHead(Node** concreteHead)
+    {
+        Node* upperNode = new Node();
+        upperNode->pNext_ = (*concreteHead);
+        (*concreteHead) = upperNode;
+    }
 
 private:
     Node* head_{nullptr};

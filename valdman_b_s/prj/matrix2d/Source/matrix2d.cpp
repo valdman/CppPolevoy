@@ -49,8 +49,7 @@ void Matrix2d::saveToFile(const std::string &path, std::ofstream &os)
 
 }
 
-void Matrix2d::loadFromFile(const std::string &path)
+void Matrix2d::loadFromFile(const std::string &path, std::ifstream &is)
 {
 
 }
-
