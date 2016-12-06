@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "-v")
 
 set(SOURCE_FILES
     main.cpp
-    ssv_service.cpp
-    ssv_service.h)
+        ssvdata.cpp
+        ssvdata.h)
 
 add_executable(ssv ${SOURCE_FILES})

@@ -81,40 +81,40 @@ prj/ssv/CMakeFiles/ssv.dir/main.cpp.o.provides: prj/ssv/CMakeFiles/ssv.dir/main.
 prj/ssv/CMakeFiles/ssv.dir/main.cpp.o.provides.build: prj/ssv/CMakeFiles/ssv.dir/main.cpp.o
 
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o: prj/ssv/CMakeFiles/ssv.dir/flags.make
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o: ../prj/ssv/ssv_service.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o"
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssv.dir/ssv_service.cpp.o -c /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.cpp
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o: prj/ssv/CMakeFiles/ssv.dir/flags.make
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o: ../prj/ssv/ssvdata.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o"
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ssv.dir/ssvdata.cpp.o -c /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ssv.dir/ssv_service.cpp.i"
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.cpp > CMakeFiles/ssv.dir/ssv_service.cpp.i
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ssv.dir/ssvdata.cpp.i"
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp > CMakeFiles/ssv.dir/ssvdata.cpp.i
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ssv.dir/ssv_service.cpp.s"
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.cpp -o CMakeFiles/ssv.dir/ssv_service.cpp.s
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ssv.dir/ssvdata.cpp.s"
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp -o CMakeFiles/ssv.dir/ssvdata.cpp.s
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.requires:
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.requires:
 
-.PHONY : prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.requires
+.PHONY : prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.requires
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.provides: prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.requires
-	$(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.provides.build
-.PHONY : prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.provides
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.provides: prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.requires
+	$(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.provides.build
+.PHONY : prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.provides
 
-prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.provides.build: prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o
+prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.provides.build: prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o
 
 
 # Object files for target ssv
 ssv_OBJECTS = \
 "CMakeFiles/ssv.dir/main.cpp.o" \
-"CMakeFiles/ssv.dir/ssv_service.cpp.o"
+"CMakeFiles/ssv.dir/ssvdata.cpp.o"
 
 # External object files for target ssv
 ssv_EXTERNAL_OBJECTS =
 
 prj/ssv/ssv: prj/ssv/CMakeFiles/ssv.dir/main.cpp.o
-prj/ssv/ssv: prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o
+prj/ssv/ssv: prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o
 prj/ssv/ssv: prj/ssv/CMakeFiles/ssv.dir/build.make
 prj/ssv/ssv: prj/ssv/CMakeFiles/ssv.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ssv"
@@ -126,7 +126,7 @@ prj/ssv/CMakeFiles/ssv.dir/build: prj/ssv/ssv
 .PHONY : prj/ssv/CMakeFiles/ssv.dir/build
 
 prj/ssv/CMakeFiles/ssv.dir/requires: prj/ssv/CMakeFiles/ssv.dir/main.cpp.o.requires
-prj/ssv/CMakeFiles/ssv.dir/requires: prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o.requires
+prj/ssv/CMakeFiles/ssv.dir/requires: prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o.requires
 
 .PHONY : prj/ssv/CMakeFiles/ssv.dir/requires
 

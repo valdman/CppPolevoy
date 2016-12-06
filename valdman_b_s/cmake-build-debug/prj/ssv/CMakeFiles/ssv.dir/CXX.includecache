@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+.././prj/interfaces/printablei.h
+iosfwd
+-
+
 /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/main.cpp
 map
 -
@@ -26,5 +30,7 @@ vector
 string
 -
 iostream
+-
+printablei.h
 -
 

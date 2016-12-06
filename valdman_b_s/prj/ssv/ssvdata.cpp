@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <iomanip>
-#include "ssv_service.h"
+#include "ssvdata.h"
 
 typedef std::string Cell;
 typedef std::string RawRow;
@@ -75,6 +75,8 @@ bool SsvData::parseSsvFromString(const std::string &inputData) {
 
     data = ssv;
     isDataLoaded = true;
+    rowNumber = data.size();
+    columnNumber = (data[0].size());
     return true;
 }
 
@@ -121,12 +123,14 @@ Row SsvData::parseStrToRow(const RawRow &rawRow) {
     return resultRow;
 }
 
-std::ostream &SsvData::printSsv(std::ostream &ostrm) {
+std::ostream &SsvData::printSsv(std::ostream &ostrm) const
+{
     printSsv(ostrm, data.size());
     return ostrm;
 }
 
-std::ostream &SsvData::printSsv(std::ostream &ostrm, const ptrdiff_t numberOfRowsToShow) {
+std::ostream &SsvData::printSsv(std::ostream &ostrm, const ptrdiff_t numberOfRowsToShow) const
+{
     if (numberOfRowsToShow > data.size() || numberOfRowsToShow < 1) {
         throw std::out_of_range("Too much row to show");
     }
@@ -168,6 +172,7 @@ bool SsvData::saveSsvToFile(const std::string &filePath) {
 bool SsvData::changeSeparator(const char &newSeparator)
 {
     separator = newSeparator;
+    return true;
 }
 
 char SsvData::getSeparator()
@@ -190,6 +195,8 @@ bool SsvData::addRow(const RawRow &rawRow)
         return false;
     }
 
+    ++rowNumber;
+    columnNumber = data[0].size();
     return true;
 }
 
@@ -197,6 +204,7 @@ bool SsvData::clear()
 {
     data.clear();
     isDataLoaded  = false;
+    return true;
 }
 
 bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
@@ -210,14 +218,68 @@ bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
         return false;
     }
     data.insert(data.begin() + idxToIns, rowToInsert);
+    ++rowNumber;
+    return true;
 }
 
 bool SsvData::removeRow(ptrdiff_t idxToRem)
 {
     if (idxToRem >= data.size() || idxToRem < 0) {
         data.erase(data.begin() + idxToRem);
+        --rowNumber;
         return true;
     } else {
         return false;
     }
+}
+
+Cell& SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex)
+{
+    if (!isDataLoaded || rowIndex >= data.size() || columnIndex >= data[0].size())
+    {
+        throw std::out_of_range("Cell index out of ssv");
+    }
+    return data[rowIndex][columnIndex];
+}
+
+SsvData::Column& SsvData::getColumn(ptrdiff_t idx)
+{
+    if (!isDataLoaded || idx >= data[0].size())
+    {
+        throw std::out_of_range("Cell index out of ssv");
+    }
+
+    Column res;
+    for (ptrdiff_t i = 0; i < data[0].size(); ++i)
+    {
+        res.push_back(data[i][idx]);
+    }
+
+    return res;
+}
+
+Row &SsvData::getRow(ptrdiff_t idx)
+{
+    if (!isDataLoaded || idx >= data.size())
+    {
+        throw std::out_of_range("Out of rows in ssv");
+    }
+
+    return data[idx];
+}
+
+Row &SsvData::operator[](ptrdiff_t idx)
+{
+    if (!isDataLoaded || idx >= data.size())
+    {
+        throw std::out_of_range("Out of rows in ssv");
+    }
+
+    return data[idx];
+}
+
+std::ostream &SsvData::writeTo(std::ostream &os) const
+{
+    this->printSsv(os);
+    return os;
 }

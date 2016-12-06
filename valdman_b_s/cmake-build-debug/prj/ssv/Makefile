@@ -152,32 +152,32 @@ main.cpp.s:
 	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-ssv_service.o: ssv_service.cpp.o
+ssvdata.o: ssvdata.cpp.o
 
-.PHONY : ssv_service.o
+.PHONY : ssvdata.o
 
 # target to build an object file
-ssv_service.cpp.o:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.o
-.PHONY : ssv_service.cpp.o
+ssvdata.cpp.o:
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o
+.PHONY : ssvdata.cpp.o
 
-ssv_service.i: ssv_service.cpp.i
+ssvdata.i: ssvdata.cpp.i
 
-.PHONY : ssv_service.i
+.PHONY : ssvdata.i
 
 # target to preprocess a source file
-ssv_service.cpp.i:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.i
-.PHONY : ssv_service.cpp.i
+ssvdata.cpp.i:
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.i
+.PHONY : ssvdata.cpp.i
 
-ssv_service.s: ssv_service.cpp.s
+ssvdata.s: ssvdata.cpp.s
 
-.PHONY : ssv_service.s
+.PHONY : ssvdata.s
 
 # target to generate assembly for a file
-ssv_service.cpp.s:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssv_service.cpp.s
-.PHONY : ssv_service.cpp.s
+ssvdata.cpp.s:
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.s
+.PHONY : ssvdata.cpp.s
 
 # Help Target
 help:
@@ -191,9 +191,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... ssv_service.o"
-	@echo "... ssv_service.i"
-	@echo "... ssv_service.s"
+	@echo "... ssvdata.o"
+	@echo "... ssvdata.i"
+	@echo "... ssvdata.s"
 .PHONY : help
 
 

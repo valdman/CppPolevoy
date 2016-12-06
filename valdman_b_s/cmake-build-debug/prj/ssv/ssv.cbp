@@ -67,10 +67,10 @@
 		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/main.cpp">
 			<Option target="ssv"/>
 		</Unit>
-		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.cpp">
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp">
 			<Option target="ssv"/>
 		</Unit>
-		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssv_service.h">
+		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.h">
 			<Option target="ssv"/>
 		</Unit>
 		<Unit filename="/Users/boris/ClionProjects/polevoy/valdman_b_s/CMakeLists.txt">
