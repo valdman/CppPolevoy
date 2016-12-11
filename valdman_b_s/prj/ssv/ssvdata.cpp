@@ -6,11 +6,6 @@
 #include <iomanip>
 #include "ssvdata.h"
 
-typedef std::string Cell;
-typedef std::string RawRow;
-typedef std::vector<Cell> Row;
-typedef std::vector<Row> Ssv;
-
 bool SsvData::parseSsvFromString(const std::string &inputData) {
     if (isDataLoaded) {
         return false;
@@ -18,7 +13,7 @@ bool SsvData::parseSsvFromString(const std::string &inputData) {
     Ssv ssv;
     bool inQuote(false);
     bool newLine(false);
-    int columnNumber{-1};
+    ptrdiff_t columnNumber{-1};
     Cell cell;
     ssv.clear();
     Row row;
@@ -42,8 +37,12 @@ bool SsvData::parseSsvFromString(const std::string &inputData) {
             } else {
                 if (!newLine) {
                     row.push_back(cell);
-                    if (row.size() == columnNumber || columnNumber == -1)
+                    if (row.size() == columnNumber || columnNumber == -1) {
                         ssv.push_back(row);
+                        if (columnNumber == -1) {
+                            columnNumber = row.size();
+                        }
+                    }
                     else {
                         throw std::runtime_error(
                                 "Wrong format of CSV (number of cell in some row incomparable with another)");
@@ -69,14 +68,9 @@ bool SsvData::parseSsvFromString(const std::string &inputData) {
 
     if (row.size() == columnNumber || columnNumber == -1)
         ssv.push_back(row);
-    else {
-        throw std::runtime_error("Wrong format of CSV (number of cell in some row incomparable with another)");
-    }
 
     data = ssv;
     isDataLoaded = true;
-    rowNumber = data.size();
-    columnNumber = (data[0].size());
     return true;
 }
 
@@ -92,7 +86,7 @@ bool SsvData::parseSsvFromFile(const std::string &filePath) {
     return parseSsvFromString(str);;
 }
 
-Row SsvData::parseStrToRow(const RawRow &rawRow) {
+SsvData::Row SsvData::parseStrToRow(const RawRow &rawRow) {
     bool inQuote(false);
     Cell cell;
     Row resultRow;
@@ -131,7 +125,7 @@ std::ostream &SsvData::printSsv(std::ostream &ostrm) const
 
 std::ostream &SsvData::printSsv(std::ostream &ostrm, const ptrdiff_t numberOfRowsToShow) const
 {
-    if (numberOfRowsToShow > data.size() || numberOfRowsToShow < 1) {
+    if (numberOfRowsToShow > getRowNumber() || numberOfRowsToShow < 1) {
         throw std::out_of_range("Too much row to show");
     }
 
@@ -156,13 +150,17 @@ bool SsvData::saveSsvToFile(const std::string &filePath) {
     std::ofstream fileToSave;
     fileToSave.open(filePath);
 
-    for (int i = 0; i < data.size(); ++i) {
+    for (int i = 0; i < getRowNumber(); ++i) {
         Row currentRow{data[i]};
-        for (int j = 0; j < currentRow.size(); ++j) {
-            fileToSave << '\"' << currentRow[j] << "\"" << separator;
+        for (int j = 0; j < getColumnNumber(); ++j) {
+            fileToSave << '\"' << currentRow[j] << "\"";
+            if(j != currentRow.size() - 1) {
+                fileToSave << separator;
+            }
         }
-
-        fileToSave << std::endl;
+        if (i != getRowNumber() - 1) {
+            fileToSave << std::endl;
+        }
     }
 
     fileToSave.close();
@@ -189,15 +187,7 @@ bool SsvData::addRow(const RawRow &rawRow)
 {
     Row rowToAdd{parseStrToRow(rawRow)};
 
-    if (data.empty() || rowToAdd.size() == data.begin()->size()) {
-        data.push_back(rowToAdd);
-    } else {
-        return false;
-    }
-
-    ++rowNumber;
-    columnNumber = data[0].size();
-    return true;
+    return addRow(rowToAdd);
 }
 
 bool SsvData::clear()
@@ -209,7 +199,7 @@ bool SsvData::clear()
 
 bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
 {
-    if (idxToIns >= data.size() || idxToIns < 0) {
+    if (!isDataLoaded || idxToIns >= getRowNumber() || idxToIns < 0) {
         return false;
     }
 
@@ -218,39 +208,37 @@ bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
         return false;
     }
     data.insert(data.begin() + idxToIns, rowToInsert);
-    ++rowNumber;
     return true;
 }
 
 bool SsvData::removeRow(ptrdiff_t idxToRem)
 {
-    if (idxToRem >= data.size() || idxToRem < 0) {
+    if (!isDataLoaded || idxToRem >= getRowNumber() || idxToRem < 0) {
         data.erase(data.begin() + idxToRem);
-        --rowNumber;
         return true;
     } else {
         return false;
     }
 }
 
-Cell& SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex)
+SsvData::Cell& SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex)
 {
-    if (!isDataLoaded || rowIndex >= data.size() || columnIndex >= data[0].size())
+    if (!isDataLoaded || rowIndex >= getRowNumber() || columnIndex >= getColumnNumber())
     {
         throw std::out_of_range("Cell index out of ssv");
     }
     return data[rowIndex][columnIndex];
 }
 
-SsvData::Column& SsvData::getColumn(ptrdiff_t idx)
+SsvData::LColumn SsvData::getColumn(ptrdiff_t idx)
 {
-    if (!isDataLoaded || idx >= data[0].size())
+    if (!isDataLoaded || idx >= getColumnNumber())
     {
         throw std::out_of_range("Cell index out of ssv");
     }
 
-    Column res;
-    for (ptrdiff_t i = 0; i < data[0].size(); ++i)
+    LColumn res;
+    for (ptrdiff_t i = 0; i < getRowNumber(); ++i)
     {
         res.push_back(data[i][idx]);
     }
@@ -258,28 +246,83 @@ SsvData::Column& SsvData::getColumn(ptrdiff_t idx)
     return res;
 }
 
-Row &SsvData::getRow(ptrdiff_t idx)
+SsvData::LRow SsvData::getRow(ptrdiff_t idx)
 {
-    if (!isDataLoaded || idx >= data.size())
+    if (!isDataLoaded || idx >= getRowNumber())
     {
         throw std::out_of_range("Out of rows in ssv");
     }
 
-    return data[idx];
-}
+    LRow res;
 
-Row &SsvData::operator[](ptrdiff_t idx)
-{
-    if (!isDataLoaded || idx >= data.size())
-    {
-        throw std::out_of_range("Out of rows in ssv");
+    for (int i = 0; i < getRowNumber(); ++i) {
+        res.push_back(data[idx][i]);
     }
 
-    return data[idx];
+    return res;
 }
 
 std::ostream &SsvData::writeTo(std::ostream &os) const
 {
     this->printSsv(os);
     return os;
+}
+
+bool SsvData::addColumn(const SsvData::Column &columnToAdd)
+{
+    if((columnToAdd.size() == getRowNumber() && columnToAdd.size() != 0) || !isDataLoaded) {
+        for (int i = 0; i < getRowNumber(); ++i) {
+            data[i].push_back(columnToAdd[i]);
+        }
+
+        return true;
+    }
+    return false;
+}
+
+void SsvData::addEmptyColumn()
+{
+    for (int i = 0; i < getRowNumber(); ++i) {
+        data[i].push_back("");
+    }
+}
+
+bool SsvData::insertColumn(const SsvData::Column &colToIns, ptrdiff_t idxToIns)
+{
+    if (!isDataLoaded || idxToIns >= getColumnNumber() || idxToIns < 0) {
+        return false;
+    } else {
+        for (int i = 0; i < getRowNumber(); ++i) {
+            data[i].insert(data[i].begin() + idxToIns, colToIns[i]);
+        }
+    }
+    return true;
+}
+
+bool SsvData::removeColumn(ptrdiff_t idxToRemove)
+{
+    if(!isDataLoaded || idxToRemove >= getColumnNumber() || idxToRemove < 0) {
+        return false;
+    } else {
+        for (int i = 0; i < getRowNumber(); ++i) {
+            data[i].erase(data[i].begin() + idxToRemove);
+        }
+    }
+    return true;
+}
+
+void SsvData::addEmptyRow()
+{
+    Row empRow;
+    data.push_back(empRow);
+}
+
+bool SsvData::addRow(const Row &row)
+{
+    if (!isDataLoaded || row.size() == getColumnNumber()) {
+        data.push_back(row);
+        return true;
+    } else {
+        return false;
+    }
 }

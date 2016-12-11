@@ -1,9 +1,11 @@
 #include <map>
 #include "ssvdata.h"
+#include <iostream>
 
 using namespace std;
 
-void showHelp() {
+void showHelp()
+{
     cout
             << "\'open\' - Load data from CSV" << endl
             << "\'man\' - Manually enter CSV" << endl
@@ -20,7 +22,8 @@ void showHelp() {
             << "\'q\' - Quit" << endl;
 }
 
-int main() {
+void gui()
+{
     SsvData ssv;
 
     bool wannaExit(false);
@@ -222,6 +225,33 @@ int main() {
         }
 
     }
+
+}
+
+int main() {
+    SsvData ssv;
+    ssv.parseSsvFromFile("/Users/boris/ssv/2.csv");
+
+    cout << ssv << endl << endl;
+
+    vector<reference_wrapper<string>> col{ssv.getColumn(3)};
+
+    vector<reference_wrapper<string>> row3{ssv.getRow(3)};
+
+    row3[2].get() = "win_row3_2";
+
+    ssv.at(0, 0) = "ID!";
+
+    vector<string> colToIns{"Love", "Tver", "Tambov", "Tambol"};
+    ssv.insertColumn(colToIns, 3);
+
+    colToIns.push_back("sample");
+    colToIns.push_back("newBest");
+    ssv.addRow(colToIns);
+
+    cout << ssv.at(1, 1) << " " << ssv.getRow(2)[1].get() << endl << endl;
+
+    cout << ssv << endl << endl;
 
     return 0;
 }

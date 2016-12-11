@@ -9,6 +9,7 @@
 
 class PrintableI{
 public:
+    PrintableI() = default;
     virtual std::ostream& writeTo(std::ostream& os) const = 0;
 };
 

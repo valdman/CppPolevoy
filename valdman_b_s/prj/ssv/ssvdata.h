@@ -7,15 +7,17 @@
 
 #include <vector>
 #include <string>
-#include <iostream>
+#include <iosfwd>
 #include <printablei.h>
 
 
-class SsvData : PrintableI {
+class SsvData : public PrintableI {
     typedef std::string Cell;
     typedef std::string RawRow;
     typedef std::vector<Cell> Row;
+    typedef std::vector<std::reference_wrapper<Cell>> LRow;
     typedef std::vector<Cell> Column;
+    typedef std::vector<std::reference_wrapper<Cell>> LColumn;
     typedef std::vector<Row> Ssv;
 
 public:
@@ -29,15 +31,21 @@ public:
     bool clear();
 
     bool addRow(const RawRow &rawRow);
+    bool addRow(const Row& row);
     bool insertRow(const RawRow& rawRow, ptrdiff_t idxToIns);
     bool removeRow(ptrdiff_t idxToRem);
+
+    bool addColumn(const Column& colToAdd);
+    bool removeColumn(ptrdiff_t idxToRemove);
+    bool insertColumn(const Column& colToIns, ptrdiff_t idxToIns);
+    void addEmptyColumn();
+    void addEmptyRow();
+
     Cell& at(ptrdiff_t rowIndex, ptrdiff_t columnIndex);
-    Row& getRow(ptrdiff_t idx);
-    Row& operator[](ptrdiff_t idx);
-    Column& getColumn(ptrdiff_t idx);
+    LRow getRow(ptrdiff_t idx);
+    LColumn getColumn(ptrdiff_t idx);
 
     Row parseStrToRow(const RawRow &rawRow);
-
     char getSeparator();
     bool changeSeparator(const char& newSeparator);
 
@@ -49,24 +57,22 @@ public:
 
 public:
     bool isIsDataLoaded() const;
-    ptrdiff_t getRowNumber()
+    ptrdiff_t getRowNumber() const
     {
-        return rowNumber;
+        return data.size();
 
     }
 
-    ptrdiff_t getColumnNumber()
+    ptrdiff_t getColumnNumber() const
     {
-        return columnNumber;
+        return data[0].size();
     }
 
-private:
+public:
     std::ostream &writeTo(std::ostream &os) const override;
 
 private:
     Ssv data;
-    ptrdiff_t rowNumber{0};
-    ptrdiff_t columnNumber{0};
     bool isDataLoaded{false};
     char separator{','};
 };
