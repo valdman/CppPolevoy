@@ -230,7 +230,7 @@ SsvData::Cell& SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex)
     return data[rowIndex][columnIndex];
 }
 
-SsvData::LColumn SsvData::getColumn(ptrdiff_t idx)
+SsvData::LColumn SsvData::getBindedColumn(ptrdiff_t idx)
 {
     if (!isDataLoaded || idx >= getColumnNumber())
     {
@@ -240,13 +240,14 @@ SsvData::LColumn SsvData::getColumn(ptrdiff_t idx)
     LColumn res;
     for (ptrdiff_t i = 0; i < getRowNumber(); ++i)
     {
-        res.push_back(data[i][idx]);
+        SsvData::LCell cell{data[i][idx]};
+        res.push_back(cell);
     }
 
     return res;
 }
 
-SsvData::LRow SsvData::getRow(ptrdiff_t idx)
+SsvData::LRow SsvData::getBindedRow(ptrdiff_t idx)
 {
     if (!isDataLoaded || idx >= getRowNumber())
     {
@@ -256,7 +257,8 @@ SsvData::LRow SsvData::getRow(ptrdiff_t idx)
     LRow res;
 
     for (int i = 0; i < getRowNumber(); ++i) {
-        res.push_back(data[idx][i]);
+        LCell cell{data[idx][i]};
+        res.push_back(cell);
     }
 
     return res;
@@ -325,4 +327,36 @@ bool SsvData::addRow(const Row &row)
     } else {
         return false;
     }
+}
+
+SsvData::Row SsvData::getRow(ptrdiff_t idx)
+{
+    if(!isDataLoaded || idx >= getRowNumber() || idx < 0) {
+        throw std::out_of_range("Out of rows in ssv");
+    }
+
+    return data[idx];
+}
+
+SsvData::Column SsvData::getColumn(ptrdiff_t idx)
+{
+    if(!isDataLoaded || idx >= getColumnNumber() || idx < 0) {
+        throw std::out_of_range("Out of columns in ssv");
+    }
+
+    Column col;
+    for (int i = 0; i < getRowNumber(); ++i) {
+        col.push_back(data[i][idx]);
+    }
+
+    return col;
+}
+
+const SsvData::Cell &SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex) const
+{
+    if (!isDataLoaded || rowIndex >= getRowNumber() || columnIndex >= getColumnNumber())
+    {
+        throw std::out_of_range("Cell index out of ssv");
+    }
+    return data[rowIndex][columnIndex];
 }

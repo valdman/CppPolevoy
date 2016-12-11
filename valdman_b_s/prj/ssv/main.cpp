@@ -232,26 +232,28 @@ int main() {
     SsvData ssv;
     ssv.parseSsvFromFile("/Users/boris/ssv/2.csv");
 
-    cout << ssv << endl << endl;
+    cout << "Введенная таблица" << endl << endl << ssv << endl << endl;
 
-    vector<reference_wrapper<string>> col{ssv.getColumn(3)};
+    cout << "Получим первую строку и изменим имя первой колонки на newId" << endl;
 
-    vector<reference_wrapper<string>> row3{ssv.getRow(3)};
+    SsvData::LRow row{ssv.getBindedRow(0)};
+    row[0].get() = "newId";
 
-    row3[2].get() = "win_row3_2";
+    cout << "Получим вторую колонку и добавим ее в конец" << endl;
 
-    ssv.at(0, 0) = "ID!";
+    SsvData::Column column{ssv.getColumn(1)};
+    ssv.addColumn(column);
 
-    vector<string> colToIns{"Love", "Tver", "Tambov", "Tambol"};
-    ssv.insertColumn(colToIns, 3);
+    cout << "Изменим 3-ий элемент в 4 колонке на \'CPP\'" << endl;
 
-    colToIns.push_back("sample");
-    colToIns.push_back("newBest");
-    ssv.addRow(colToIns);
+    ssv.at(2, 3) = "CPP";
 
-    cout << ssv.at(1, 1) << " " << ssv.getRow(2)[1].get() << endl << endl;
+    cout << "Выведем первые 3 строки измененных данных, затем очистим загруженные данные" << endl << endl;
 
-    cout << ssv << endl << endl;
+    ssv.printSsv(cout, 3);
+    ssv.clear();
+
+    cout << endl;
 
     return 0;
 }
