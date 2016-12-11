@@ -22,7 +22,7 @@ void showHelp()
             << "\'q\' - Quit" << endl;
 }
 
-void gui()
+void ui()
 {
     SsvData ssv;
 
@@ -230,28 +230,42 @@ void gui()
 
 int main() {
     SsvData ssv;
-    ssv.parseSsvFromFile("/Users/boris/ssv/2.csv");
+
+    string inp;
+    cout << "Введите полный путь к файлу:";
+
+    getline(cin, inp);
+    ssv.parseSsvFromFile(inp.empty() ? "/Users/boris/ssv/2.csv" : inp);
 
     cout << "Введенная таблица" << endl << endl << ssv << endl << endl;
 
-    cout << "Получим первую строку и изменим имя первой колонки на newId" << endl;
+    if (ssv.isIsDataLoaded()) {
+        cout << "Получим первую строку и изменим имя первой колонки на newId" << endl;
+        SsvData::LRow row{ssv.getBindedRow(0)};
+        row[0].get() = "newId";
+    }
 
-    SsvData::LRow row{ssv.getBindedRow(0)};
-    row[0].get() = "newId";
+    if(ssv.getColumnNumber() >= 2 ) {
+        cout << "Получим вторую колонку и добавим ее в конец" << endl;
+        SsvData::Column column{ssv.getColumn(1)};
+        ssv.addColumn(column);
+    }
 
-    cout << "Получим вторую колонку и добавим ее в конец" << endl;
+    if(ssv.getRowNumber() > 2 && ssv.getColumnNumber() > 3) {
+        cout << "Изменим 3-ий элемент в 4 колонке на \'CPP\'" << endl;
+        ssv.at(2, 3) = "CPP";
+    }
 
-    SsvData::Column column{ssv.getColumn(1)};
-    ssv.addColumn(column);
+    if (ssv.getRowNumber() >= 3) {
+        cout << "Выведем первые 3 строки измененных данных, затем очистим загруженные данные, сохранив их в /Users/boris/ssv/out.csv" << endl << endl;
 
-    cout << "Изменим 3-ий элемент в 4 колонке на \'CPP\'" << endl;
+        ssv.printSsv(cout, 3);
+        ssv.saveSsvToFile("/Users/boris/ssv/out.csv");
+        cout << "В финальной таблице " << ssv.getRowNumber() << " строк и " << ssv.getColumnNumber() << " столбцов." << endl;
+        ssv.clear();
+        cout << "После очистки " << ssv.getRowNumber() << " строк и " << ssv.getColumnNumber() << " столбцов." << endl;
+    }
 
-    ssv.at(2, 3) = "CPP";
-
-    cout << "Выведем первые 3 строки измененных данных, затем очистим загруженные данные" << endl << endl;
-
-    ssv.printSsv(cout, 3);
-    ssv.clear();
 
     cout << endl;
 
