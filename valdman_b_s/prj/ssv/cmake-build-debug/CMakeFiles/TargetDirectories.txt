@@ -1,3 +1,0 @@
-/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/cmake-build-debug/CMakeFiles/ssv.dir
