@@ -202,6 +202,19 @@ ssv/fast:
 .PHONY : ssv/fast
 
 #=============================================================================
+# Target rules for targets named ssvdata
+
+# Build rule for target.
+ssvdata: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ssvdata
+.PHONY : ssvdata
+
+# fast build rule for target.
+ssvdata/fast:
+	$(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/build
+.PHONY : ssvdata/fast
+
+#=============================================================================
 # Target rules for targets named vec2d
 
 # Build rule for target.
@@ -242,6 +255,7 @@ help:
 	@echo "... nod"
 	@echo "... rational"
 	@echo "... ssv"
+	@echo "... ssvdata"
 	@echo "... vec2d"
 	@echo "... Vector"
 .PHONY : help

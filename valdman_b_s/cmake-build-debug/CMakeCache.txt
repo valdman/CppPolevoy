@@ -237,6 +237,12 @@ ssv_BINARY_DIR:STATIC=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build
 //Value Computed by CMake
 ssv_SOURCE_DIR:STATIC=/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv
 
+//Dependencies for target
+ssvd_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+ssvdata_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 valdman_b_s_BINARY_DIR:STATIC=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug
 

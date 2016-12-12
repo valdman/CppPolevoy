@@ -73,6 +73,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "prj/nod/CMakeFiles/nod.dir/DependInfo.cmake"
   "prj/rational/CMakeFiles/rational.dir/DependInfo.cmake"
   "prj/ssv/CMakeFiles/ssv.dir/DependInfo.cmake"
+  "prj/ssv/CMakeFiles/ssvdata.dir/DependInfo.cmake"
   "prj/vec2d/CMakeFiles/vec2d.dir/DependInfo.cmake"
   "prj/vector/CMakeFiles/Vector.dir/DependInfo.cmake"
   )

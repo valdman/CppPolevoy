@@ -21,6 +21,7 @@
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/edit_cache.dir
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/rebuild_cache.dir
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/ssv.dir
+/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/ssvdata.dir
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/CMakeFiles/edit_cache.dir
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/CMakeFiles/rebuild_cache.dir
 /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/vec2d/CMakeFiles/vec2d.dir

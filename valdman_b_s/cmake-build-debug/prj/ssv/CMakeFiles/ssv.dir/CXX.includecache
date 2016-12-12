@@ -18,14 +18,6 @@ ssvdata.h
 iostream
 -
 
-/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp
-fstream
--
-iomanip
--
-ssvdata.h
-/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.h
-
 /Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.h
 vector
 -

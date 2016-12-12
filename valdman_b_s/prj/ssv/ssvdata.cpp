@@ -214,10 +214,10 @@ bool SsvData::insertRow(const RawRow& rawRow, ptrdiff_t idxToIns)
 bool SsvData::removeRow(ptrdiff_t idxToRem)
 {
     if (!isDataLoaded || idxToRem >= getRowNumber() || idxToRem < 0) {
+        return false;
+    } else {
         data.erase(data.begin() + idxToRem);
         return true;
-    } else {
-        return false;
     }
 }
 

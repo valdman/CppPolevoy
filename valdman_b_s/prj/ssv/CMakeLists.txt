@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.6)
 project(ssv)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS)
+set(CMAKE_CXX_FLAGS -v)
 
-set(SOURCE_FILES
-    main.cpp
-        ssvdata.cpp
-        ssvdata.h)
+add_library(ssvdata ssvdata.cpp ssvdata.h)
+
+set(SOURCE_FILES main.cpp)
 
 add_executable(ssv ${SOURCE_FILES})
+target_link_libraries(ssv ssvdata)

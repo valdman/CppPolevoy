@@ -5,7 +5,3 @@ prj/ssv/CMakeFiles/ssv.dir/main.cpp.o: .././prj/interfaces/printablei.h
 prj/ssv/CMakeFiles/ssv.dir/main.cpp.o: ../prj/ssv/main.cpp
 prj/ssv/CMakeFiles/ssv.dir/main.cpp.o: ../prj/ssv/ssvdata.h
 
-prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o: .././prj/interfaces/printablei.h
-prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o: ../prj/ssv/ssvdata.cpp
-prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o: ../prj/ssv/ssvdata.h
-

@@ -125,6 +125,21 @@ ssv/fast:
 	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/build
 .PHONY : ssv/fast
 
+# Convenience name for target.
+prj/ssv/CMakeFiles/ssvdata.dir/rule:
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 prj/ssv/CMakeFiles/ssvdata.dir/rule
+.PHONY : prj/ssv/CMakeFiles/ssvdata.dir/rule
+
+# Convenience name for target.
+ssvdata: prj/ssv/CMakeFiles/ssvdata.dir/rule
+
+.PHONY : ssvdata
+
+# fast build rule for target.
+ssvdata/fast:
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/build
+.PHONY : ssvdata/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -158,7 +173,7 @@ ssvdata.o: ssvdata.cpp.o
 
 # target to build an object file
 ssvdata.cpp.o:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/ssvdata.cpp.o
 .PHONY : ssvdata.cpp.o
 
 ssvdata.i: ssvdata.cpp.i
@@ -167,7 +182,7 @@ ssvdata.i: ssvdata.cpp.i
 
 # target to preprocess a source file
 ssvdata.cpp.i:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.i
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/ssvdata.cpp.i
 .PHONY : ssvdata.cpp.i
 
 ssvdata.s: ssvdata.cpp.s
@@ -176,7 +191,7 @@ ssvdata.s: ssvdata.cpp.s
 
 # target to generate assembly for a file
 ssvdata.cpp.s:
-	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.s
+	cd /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug && $(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/ssvdata.cpp.s
 .PHONY : ssvdata.cpp.s
 
 # Help Target
@@ -188,6 +203,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ssv"
+	@echo "... ssvdata"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

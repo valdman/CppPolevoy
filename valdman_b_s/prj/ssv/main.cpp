@@ -228,7 +228,8 @@ void ui()
 
 }
 
-int main() {
+void test()
+{
     SsvData ssv;
 
     string inp;
@@ -241,8 +242,8 @@ int main() {
 
     if (ssv.isIsDataLoaded()) {
         cout << "Получим первую строку и изменим имя первой колонки на newId" << endl;
-        SsvData::LRow row{ssv.getBindedRow(0)};
-        row[0].get() = "newId";
+        SsvData::LRow lRow{ssv.getBindedRow(0)};
+        lRow[0].get() = "newId";
     }
 
     if(ssv.getColumnNumber() >= 2 ) {
@@ -262,12 +263,25 @@ int main() {
         ssv.printSsv(cout, 3);
         ssv.saveSsvToFile("/Users/boris/ssv/out.csv");
         cout << "В финальной таблице " << ssv.getRowNumber() << " строк и " << ssv.getColumnNumber() << " столбцов." << endl;
-        ssv.clear();
+        //ssv.clear();
         cout << "После очистки " << ssv.getRowNumber() << " строк и " << ssv.getColumnNumber() << " столбцов." << endl;
     }
 
+    SsvData::LColumn lColumn{ssv.getBindedColumn(0)};
+
+    ssv.removeRow(0);
+
+    SsvData::Cell cell{lColumn[0].get()};
+    cout << cell << endl;
+
+    cout << ssv << endl;
+
+}
+
+int main()
+{
+    test();
 
     cout << endl;
-
     return 0;
 }

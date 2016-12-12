@@ -394,11 +394,13 @@ clean: prj/rational/CMakeFiles/rational.dir/clean
 
 # Convenience name for "all" pass in the directory.
 prj/ssv/all: prj/ssv/CMakeFiles/ssv.dir/all
+prj/ssv/all: prj/ssv/CMakeFiles/ssvdata.dir/all
 
 .PHONY : prj/ssv/all
 
 # Convenience name for "clean" pass in the directory.
 prj/ssv/clean: prj/ssv/CMakeFiles/ssv.dir/clean
+prj/ssv/clean: prj/ssv/CMakeFiles/ssvdata.dir/clean
 
 .PHONY : prj/ssv/clean
 
@@ -411,10 +413,10 @@ prj/ssv/preinstall:
 # Target rules for target prj/ssv/CMakeFiles/ssv.dir
 
 # All Build rule for target.
-prj/ssv/CMakeFiles/ssv.dir/all:
+prj/ssv/CMakeFiles/ssv.dir/all: prj/ssv/CMakeFiles/ssvdata.dir/all
 	$(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/depend
 	$(MAKE) -f prj/ssv/CMakeFiles/ssv.dir/build.make prj/ssv/CMakeFiles/ssv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=21,22,23 "Built target ssv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target ssv"
 .PHONY : prj/ssv/CMakeFiles/ssv.dir/all
 
 # Include target in all.
@@ -424,7 +426,7 @@ all: prj/ssv/CMakeFiles/ssv.dir/all
 
 # Build rule for subdir invocation for target.
 prj/ssv/CMakeFiles/ssv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 prj/ssv/CMakeFiles/ssv.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles 0
 .PHONY : prj/ssv/CMakeFiles/ssv.dir/rule
@@ -441,6 +443,43 @@ prj/ssv/CMakeFiles/ssv.dir/clean:
 
 # clean rule for target.
 clean: prj/ssv/CMakeFiles/ssv.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target prj/ssv/CMakeFiles/ssvdata.dir
+
+# All Build rule for target.
+prj/ssv/CMakeFiles/ssvdata.dir/all:
+	$(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/depend
+	$(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=23,24 "Built target ssvdata"
+.PHONY : prj/ssv/CMakeFiles/ssvdata.dir/all
+
+# Include target in all.
+all: prj/ssv/CMakeFiles/ssvdata.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+prj/ssv/CMakeFiles/ssvdata.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 prj/ssv/CMakeFiles/ssvdata.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles 0
+.PHONY : prj/ssv/CMakeFiles/ssvdata.dir/rule
+
+# Convenience name for target.
+ssvdata: prj/ssv/CMakeFiles/ssvdata.dir/rule
+
+.PHONY : ssvdata
+
+# clean rule for target.
+prj/ssv/CMakeFiles/ssvdata.dir/clean:
+	$(MAKE) -f prj/ssv/CMakeFiles/ssvdata.dir/build.make prj/ssv/CMakeFiles/ssvdata.dir/clean
+.PHONY : prj/ssv/CMakeFiles/ssvdata.dir/clean
+
+# clean rule for target.
+clean: prj/ssv/CMakeFiles/ssvdata.dir/clean
 
 .PHONY : clean
 
@@ -469,7 +508,7 @@ prj/vec2d/preinstall:
 prj/vec2d/CMakeFiles/vec2d.dir/all:
 	$(MAKE) -f prj/vec2d/CMakeFiles/vec2d.dir/build.make prj/vec2d/CMakeFiles/vec2d.dir/depend
 	$(MAKE) -f prj/vec2d/CMakeFiles/vec2d.dir/build.make prj/vec2d/CMakeFiles/vec2d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=24,25,26 "Built target vec2d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/CMakeFiles --progress-num=25,26,27 "Built target vec2d"
 .PHONY : prj/vec2d/CMakeFiles/vec2d.dir/all
 
 # Include target in all.

@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/main.cpp" "/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/ssv.dir/main.cpp.o"
-  "/Users/boris/ClionProjects/polevoy/valdman_b_s/prj/ssv/ssvdata.cpp" "/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/ssv.dir/ssvdata.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -16,6 +15,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/boris/ClionProjects/polevoy/valdman_b_s/cmake-build-debug/prj/ssv/CMakeFiles/ssvdata.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
