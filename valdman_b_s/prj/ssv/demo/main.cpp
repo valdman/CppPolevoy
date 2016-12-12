@@ -1,5 +1,5 @@
 #include <map>
-#include "ssvdata.h"
+#include "../lib/ssvdata.h"
 #include <iostream>
 
 using namespace std;
@@ -266,13 +266,6 @@ void test()
         //ssv.clear();
         cout << "После очистки " << ssv.getRowNumber() << " строк и " << ssv.getColumnNumber() << " столбцов." << endl;
     }
-
-    SsvData::LColumn lColumn{ssv.getBindedColumn(0)};
-
-    ssv.removeRow(0);
-
-    SsvData::Cell cell{lColumn[0].get()};
-    cout << cell << endl;
 
     cout << ssv << endl;
 
