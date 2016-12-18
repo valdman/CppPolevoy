@@ -1,6 +1,6 @@
 #include <map>
-#include "../lib/ssvdata.h"
 #include <iostream>
+#include <ssvdata.h>
 
 using namespace std;
 
