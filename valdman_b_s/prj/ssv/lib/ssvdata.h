@@ -79,7 +79,6 @@ private:
     char separator{','};
 };
 
-
 extern "C" void changeSeparatorInFile(const char* filePath, const char newSeparator);
 
 #endif //HG_H_SSV_DATA_20161016

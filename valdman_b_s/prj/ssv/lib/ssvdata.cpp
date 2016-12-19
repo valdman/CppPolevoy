@@ -363,10 +363,12 @@ const SsvData::Cell &SsvData::at(ptrdiff_t rowIndex, ptrdiff_t columnIndex) cons
 
 void changeSeparatorInFile(const char *filePath, const char newSeparator)
 {
-    std::string pathString{filePath};
+    try {
+        std::string pathString{filePath};
 
-    SsvData ssv;
-    ssv.parseSsvFromFile(pathString);
-    ssv.changeSeparator(newSeparator);
-    ssv.saveSsvToFile(filePath);
+        SsvData ssv;
+        ssv.parseSsvFromFile(pathString);
+        ssv.changeSeparator(newSeparator);
+        ssv.saveSsvToFile(filePath);
+    }catch (std::exception) {}
 }
